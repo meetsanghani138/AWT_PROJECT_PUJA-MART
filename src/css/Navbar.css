@@ -1,0 +1,67 @@
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:8px 30px;
+background-color:#fff;
+border-bottom:1px solid #ddd;
+}
+
+/* Logo */
+.logo img{
+height:55px;
+width:auto;
+}
+
+/* Menu */
+.menu{
+display:flex;
+gap:25px;
+}
+
+.menu a{
+text-decoration:none;
+color:black;
+font-weight:500;
+font-size:15px;
+}
+
+
+
+/* Middle Menu */
+.menu{
+flex:2;
+display:flex;
+justify-content:center;
+gap:30px;
+}
+
+.menu a{
+text-decoration:none;
+color:black;
+font-weight:500;
+font-size:16px;
+}
+
+.menu a:hover{
+color:#ff6b00;
+}
+
+/* Right Menu */
+.rightMenu{
+flex:1;
+display:flex;
+justify-content:flex-end;
+gap:20px;
+}
+
+.rightMenu a{
+text-decoration:none;
+color:black;
+font-weight:500;
+font-size:16px;
+}
+
+.rightMenu a:hover{
+color:#ff6b00;
+}

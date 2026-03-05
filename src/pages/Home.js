@@ -1,111 +1,113 @@
-// import Navbar from "../components/Navbar";
-
-// function Home() {
-//   return (
-//     <>
-//       <Navbar />
-//       <h1>Welcome to Puja Mart</h1>
-//     </>
-//   );
-// }
-
-// export default Home;
-
-
 import React from "react";
-import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import "../css/Home.css";
 
 function Home() {
-  return (
-    <div className="home">
 
-      {/* NAVBAR */}
-      <header className="navbar">
-        <div className="logo">🛕 PujaMart</div>
+const firstRow = [
+"Ganesh Idol",
+"Puja Thali",
+"Agarbatti",
+"Aarti Diya",
+"Jap Mala"
+];
 
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/shop">Shop</Link>
-          <Link to="/cart">Cart</Link>
-          <Link to="/login">Login</Link>
-        </nav>
-      </header>
+const secondRow = [
+"Puja Kits",
+"Dresses",
+"Devotional Books",
+"Prashad"
+];
 
+return (
+<>
+<Navbar />
 
-      {/* HERO SECTION */}
-      <section className="hero">
-        <div className="hero-content">
-          <h1>Pure Devotion. Delivered to Your Door.</h1>
-          <p>
-            Explore premium puja essentials, idols, incense, diyas,
-            and complete pooja kits for every occasion.
-          </p>
-          <Link to="/shop" className="btn">
-            Shop Now
-          </Link>
-        </div>
-      </section>
+{/* Hero Section */}
+<section className="hero">
+<div className="hero-content">
+<h1>Everything You Need for Daily Puja & Festivals</h1>
+<p>
+Discover authentic puja items, spiritual essentials, and festival
+products all in one place.
+</p>
 
+<div className="hero-buttons">
+<button className="shop-btn">Shop Now</button>
+<button className="explore-btn">Explore Products</button>
+</div>
+</div>
+</section>
 
-      {/* CATEGORIES */}
-      <section className="categories">
-        <h2>Shop By Category</h2>
+{/* Featured Puja Items */}
 
-        <div className="category-grid">
-          <div className="category-card">🪔 Diyas</div>
-          <div className="category-card">🕉️ Idols</div>
-          <div className="category-card">🌸 Flowers</div>
-          <div className="category-card">📿 Mala & Beads</div>
-        </div>
-      </section>
+<section className="featured">
 
+<h2 className="featured-title">Featured Puja Items</h2>
 
-      {/* FEATURED PRODUCTS */}
-      <section className="featured">
-        <h2>Featured Products</h2>
+{/* First Row */}
+<div className="row-five">
+{firstRow.map((item,index)=>(
+<div className="circle-item" key={index}>
+<div className="circle"></div>
+<p>{item}</p>
+</div>
+))}
+</div>
 
-        <div className="product-grid">
-          <div className="product-card">
-            <img
-              src="https://via.placeholder.com/200"
-              alt="Brass Diya"
-            />
-            <h3>Brass Diya</h3>
-            <p>₹299</p>
-            <button>Add to Cart</button>
-          </div>
+{/* Second Row */}
 
-          <div className="product-card">
-            <img
-              src="https://via.placeholder.com/200"
-              alt="Ganesha Idol"
-            />
-            <h3>Ganesha Idol</h3>
-            <p>₹899</p>
-            <button>Add to Cart</button>
-          </div>
+<div className="row-four">
+{secondRow.map((item,index)=>(
+<div className="circle-item" key={index}>
+<div className="circle"></div>
+<p>{item}</p>
+</div>
+))}
+</div>
 
-          <div className="product-card">
-            <img
-              src="https://via.placeholder.com/200"
-              alt="Agarbatti Pack"
-            />
-            <h3>Agarbatti Pack</h3>
-            <p>₹149</p>
-            <button>Add to Cart</button>
-          </div>
-        </div>
-      </section>
+</section>
 
 
-      {/* FOOTER */}
-      <footer className="footer">
-        <p>© 2026 PujaMart. All Rights Reserved.</p>
-      </footer>
+{/* Festival Special Section */}
 
-    </div>
-  );
+
+<section className="festival">
+
+<h2 className="festival-title">🎉 Festival Special Offers</h2>
+
+<div className="festival-grid">
+
+{[
+{title:"Navratri Special Kit",offer:"🔥 20% OFF"},
+{title:"Diwali Puja Combo",offer:"🔥 25% OFF"},
+{title:"Ganesh Chaturthi Items",offer:"🔥 15% OFF"},
+{title:"Raksha Bandhan Puja Kit",offer:"🔥 10% OFF"},
+{title:"Janmashtami Puja Set",offer:"🔥 18% OFF"},
+{title:"Maha Shivratri Kit",offer:"🔥 22% OFF"},
+{title:"Durga Puja Essentials",offer:"🔥 20% OFF"},
+{title:"Karva Chauth Puja Thali",offer:"🔥 17% OFF"},
+{title:"Holi Festival Combo",offer:"🔥 12% OFF"},
+].map((item,index)=>(
+<div className="festival-card" key={index}>
+
+<span className="offer-badge">{item.offer}</span>
+
+<div className="festival-img"></div>
+
+<h3>{item.title}</h3>
+
+<button className="festival-btn">Shop Now</button>
+
+</div>
+))}
+
+</div>
+
+</section>
+
+</>
+);
 }
 
 export default Home;
