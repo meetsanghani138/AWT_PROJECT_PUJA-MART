@@ -6,8 +6,6 @@ import Cart from "../pages/Cart";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ProductDetails from "../pages/ProductDetails";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
 import Pandit from "../pages/Pandit";
 import Products from "../pages/Products";
 import Wishlist from "../pages/Wishlist";
@@ -23,8 +21,6 @@ function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
         <Route path="/pandit" element={<Pandit />} />
         <Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
