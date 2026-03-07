@@ -17,8 +17,8 @@ function Navbar() {
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
         <Link to="/products">Products</Link>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
         <Link to="/pandit">Pandit Service</Link>
       </div>
 

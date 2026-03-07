@@ -192,7 +192,7 @@ products all in one place.
 
 {/* About Us Section */}
 
-<section className="about">
+<section  id="about" className="about">
 
 <h2 className="about-title">About Us</h2>
 
@@ -249,8 +249,7 @@ staying rooted in devotion and tradition.
 
 
 {/* Modern Contact Section */}
-
-<section className="contact-modern">
+<section id="contact" className="contact-modern">
 
 <h2 className="contact-title">📍 Contact Us</h2>
 
