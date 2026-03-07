@@ -7,13 +7,11 @@ background-color:#fff;
 border-bottom:1px solid #ddd;
 }
 
-/* Logo */
 .logo img{
 height:55px;
 width:auto;
 }
 
-/* Menu */
 .menu{
 display:flex;
 gap:25px;
