@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Cart.css";
+import Navbar from "../components/Navbar";
 
 const Cart = () => {
 
@@ -30,7 +31,6 @@ const Cart = () => {
     },
   ]);
 
-  // increase quantity
   const increaseQty = (id) => {
     setCartItems(
       cartItems.map((item) =>
@@ -41,7 +41,6 @@ const Cart = () => {
     );
   };
 
-  // decrease quantity
   const decreaseQty = (id) => {
     setCartItems(
       cartItems.map((item) =>
@@ -52,12 +51,10 @@ const Cart = () => {
     );
   };
 
-  // remove item
   const removeItem = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
-  // totals
   const subtotal = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
@@ -69,102 +66,100 @@ const Cart = () => {
   const total = subtotal + delivery - discount;
 
   return (
-    <div className="cart-page">
+    <>
+      <Navbar />
 
-      <h1 className="cart-title">🛒 My Cart</h1>
+      <div className="cart-page">
 
-      {cartItems.length === 0 ? (
-        <div className="empty-cart">
-          <h2>Your Cart is Empty</h2>
-          <p>Add some puja items to start shopping.</p>
-        </div>
-      ) : (
+        <h1 className="cart-title">🛒 My Cart</h1>
 
-        <div className="cart-container">
+        {cartItems.length === 0 ? (
+          <div className="empty-cart">
+            <h2>Your Cart is Empty</h2>
+            <p>Add some puja items to start shopping.</p>
+          </div>
+        ) : (
 
-          {/* Cart Items */}
-          <div className="cart-items">
+          <div className="cart-container">
 
-            {cartItems.map((item) => (
-              <div key={item.id} className="cart-card">
+            <div className="cart-items">
 
-                <img src={item.image} alt={item.name} />
+              {cartItems.map((item) => (
+                <div key={item.id} className="cart-card">
 
-                <div className="cart-info">
+                  <img src={item.image} alt={item.name} />
 
-                  <h3>{item.name}</h3>
+                  <div className="cart-info">
 
-                  <p className="price">₹{item.price}</p>
+                    <h3>{item.name}</h3>
 
-                  <div className="qty-controls">
+                    <p className="price">₹{item.price}</p>
 
-                    <button onClick={() => decreaseQty(item.id)}>
-                      −
-                    </button>
+                    <div className="qty-controls">
 
-                    <span>{item.quantity}</span>
+                      <button onClick={() => decreaseQty(item.id)}>−</button>
 
-                    <button onClick={() => increaseQty(item.id)}>
-                      +
+                      <span>{item.quantity}</span>
+
+                      <button onClick={() => increaseQty(item.id)}>+</button>
+
+                    </div>
+
+                    <button
+                      className="remove-btn"
+                      onClick={() => removeItem(item.id)}
+                    >
+                      Remove
                     </button>
 
                   </div>
 
-                  <button
-                    className="remove-btn"
-                    onClick={() => removeItem(item.id)}
-                  >
-                    Remove
-                  </button>
-
                 </div>
+              ))}
 
+            </div>
+
+            <div className="cart-summary">
+
+              <h2>Order Summary</h2>
+
+              <div className="summary-row">
+                <span>Items</span>
+                <span>{cartItems.length}</span>
               </div>
-            ))}
+
+              <div className="summary-row">
+                <span>Subtotal</span>
+                <span>₹{subtotal}</span>
+              </div>
+
+              <div className="summary-row">
+                <span>Delivery</span>
+                <span>₹{delivery}</span>
+              </div>
+
+              <div className="summary-row">
+                <span>Discount</span>
+                <span>-₹{discount}</span>
+              </div>
+
+              <hr />
+
+              <div className="summary-total">
+                <span>Total</span>
+                <span>₹{total}</span>
+              </div>
+
+              <button className="checkout-btn">
+                Proceed to Checkout
+              </button>
+
+            </div>
 
           </div>
-
-          {/* Order Summary */}
-          <div className="cart-summary">
-
-            <h2>Order Summary</h2>
-
-            <div className="summary-row">
-              <span>Items</span>
-              <span>{cartItems.length}</span>
-            </div>
-
-            <div className="summary-row">
-              <span>Subtotal</span>
-              <span>₹{subtotal}</span>
-            </div>
-
-            <div className="summary-row">
-              <span>Delivery</span>
-              <span>₹{delivery}</span>
-            </div>
-
-            <div className="summary-row">
-              <span>Discount</span>
-              <span>-₹{discount}</span>
-            </div>
-
-            <hr />
-
-            <div className="summary-total">
-              <span>Total</span>
-              <span>₹{total}</span>
-            </div>
-
-            <button className="checkout-btn">
-              Proceed to Checkout
-            </button>
-
-          </div>
-
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 };
 
