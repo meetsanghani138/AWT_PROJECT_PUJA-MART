@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Wishlist.css";
+import Navbar from "../components/Navbar";
 
 const Wishlist = () => {
 
@@ -29,40 +30,45 @@ const Wishlist = () => {
   };
 
   return (
-    <div className="wishlist-container">
+    <>
+      <Navbar />
 
-      <h1 className="wishlist-title">💖 My Wishlist</h1>
+      <div className="wishlist-container">
 
-      {wishlist.length === 0 ? (
-        <p className="empty-msg">Your wishlist is empty</p>
-      ) : (
-        <div className="wishlist-grid">
+        <h1 className="wishlist-title">💖 My Wishlist</h1>
 
-          {wishlist.map((item) => (
-            <div key={item.id} className="wishlist-card">
+        {wishlist.length === 0 ? (
+          <p className="empty-msg">Your wishlist is empty</p>
+        ) : (
+          <div className="wishlist-grid">
 
-              <img src={item.image} alt={item.name} />
+            {wishlist.map((item) => (
+              <div key={item.id} className="wishlist-card">
 
-              <h3>{item.name}</h3>
-              <p className="price">{item.price}</p>
+                <img src={item.image} alt={item.name} />
 
-              <div className="wishlist-buttons">
-                <button className="cart-btn">Add to Cart</button>
-                <button
-                  className="remove-btn"
-                  onClick={() => removeItem(item.id)}
-                >
-                  Remove
-                </button>
+                <h3>{item.name}</h3>
+                <p className="price">{item.price}</p>
+
+                <div className="wishlist-buttons">
+                  <button className="cart-btn">Add to Cart</button>
+
+                  <button
+                    className="remove-btn"
+                    onClick={() => removeItem(item.id)}
+                  >
+                    Remove
+                  </button>
+                </div>
+
               </div>
+            ))}
 
-            </div>
-          ))}
+          </div>
+        )}
 
-        </div>
-      )}
-
-    </div>
+      </div>
+    </>
   );
 };
 
