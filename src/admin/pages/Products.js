@@ -1,9 +1,17 @@
 import React from "react";
-import AdminNavbar from "../components/AdminNavbar";
 import AdminSidebar from "../components/AdminSidebar";
-import "../css/Dashboard.css";
+import AdminNavbar from "../components/AdminNavbar";
+import "../css/Products.css";
 
-const Products = () => {
+function Products() {
+
+  const products = [
+    { id: 1, name: "Brass Diya", price: 120, stock: 30 },
+    { id: 2, name: "Incense Sticks", price: 60, stock: 50 },
+    { id: 3, name: "Puja Thali", price: 250, stock: 10 },
+    { id: 4, name: "Camphor", price: 40, stock: 70 }
+  ];
+
   return (
     <div className="admin-container">
 
@@ -13,31 +21,22 @@ const Products = () => {
 
         <AdminNavbar />
 
-        <div className="dashboard-content">
+        <div className="products-page">
 
-          <h1>Products</h1>
+          <h2>Products</h2>
 
-          <div className="product-header">
+          <input
+            type="text"
+            placeholder="Search product..."
+            className="product-search"
+          />
 
-            <input
-              type="text"
-              placeholder="Search Product..."
-              className="search-box"
-            />
-
-            <button className="add-btn">
-              ➕ Add Product
-            </button>
-
-          </div>
-
-          <table className="product-table">
+          <table className="products-table">
 
             <thead>
               <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Category</th>
+                <th>ID</th>
+                <th>Product Name</th>
                 <th>Price</th>
                 <th>Stock</th>
                 <th>Action</th>
@@ -46,27 +45,21 @@ const Products = () => {
 
             <tbody>
 
-              <tr>
-                <td>🛕</td>
-                <td>Ganesh Murti</td>
-                <td>God Murti</td>
-                <td>₹1500</td>
-                <td>10</td>
-                <td>
-                  ✏ Edit | 🗑 Delete
-                </td>
-              </tr>
+              {products.map((product) => (
+                <tr key={product.id}>
 
-              <tr>
-                <td>🪔</td>
-                <td>Puja Thali</td>
-                <td>Puja Items</td>
-                <td>₹800</td>
-                <td>5</td>
-                <td>
-                  ✏ Edit | 🗑 Delete
-                </td>
-              </tr>
+                  <td>{product.id}</td>
+                  <td>{product.name}</td>
+                  <td>₹{product.price}</td>
+                  <td>{product.stock}</td>
+
+                  <td>
+                    <button className="edit-btn">Edit</button>
+                    <button className="delete-btn">Delete</button>
+                  </td>
+
+                </tr>
+              ))}
 
             </tbody>
 
@@ -75,9 +68,8 @@ const Products = () => {
         </div>
 
       </div>
-
     </div>
   );
-};
+}
 
 export default Products;

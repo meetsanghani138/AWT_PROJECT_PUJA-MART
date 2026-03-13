@@ -1,13 +1,12 @@
 import React from "react";
-import AppRoutes from "./routes/AppRoutes";
-import Navbar from "./components/Navbar";
+import { BrowserRouter } from "react-router-dom";
+import AdminRoutes from "./admin/routes/AdminRoutes";
 
 function App() {
   return (
-    <div>
-      
-      <AppRoutes />
-    </div>
+    <BrowserRouter>
+      <AdminRoutes />
+    </BrowserRouter>
   );
 }
 

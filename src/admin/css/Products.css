@@ -1,85 +1,64 @@
-/* Main Layout */
-.products-container{
-  padding:30px;
+.products-page{
+background: rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding:25px;
+margin:20px;
+border-radius:15px;
+box-shadow:0 8px 32px rgba(0,0,0,0.1);
 }
 
-/* Header Section */
-.product-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:20px;
+.products-page h2{
+margin-bottom:15px;
+color:#ff6b00;
 }
 
-/* Search Box */
-.search-box{
-  padding:10px;
-  width:250px;
-  border:1px solid #ccc;
-  border-radius:6px;
-  outline:none;
+.product-search{
+padding:10px;
+width:250px;
+border-radius:8px;
+border:1px solid #ccc;
+margin-bottom:20px;
 }
 
-/* Add Product Button */
-.add-btn{
-  padding:10px 18px;
-  background:#ff9800;
-  border:none;
-  border-radius:6px;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
+.products-table{
+width:100%;
+border-collapse:collapse;
 }
 
-.add-btn:hover{
-  background:#e68900;
+.products-table th,
+.products-table td{
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:left;
 }
 
-/* Product Table */
-.product-table{
-  width:100%;
-  border-collapse:collapse;
-  background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
-  border-radius:10px;
-  overflow:hidden;
+.products-table th{
+background:#f5f5f5;
 }
 
-/* Table Header */
-.product-table th{
-  background:#f4f4f4;
-  padding:12px;
-  text-align:left;
-}
-
-/* Table Data */
-.product-table td{
-  padding:12px;
-  border-bottom:1px solid #eee;
-}
-
-/* Hover Effect */
-.product-table tr:hover{
-  background:#fafafa;
-}
-
-/* Action Buttons */
 .edit-btn{
-  background:#2196f3;
-  color:white;
-  border:none;
-  padding:6px 10px;
-  border-radius:4px;
-  margin-right:5px;
-  cursor:pointer;
+padding:6px 12px;
+background:#3498db;
+border:none;
+color:white;
+border-radius:5px;
+margin-right:5px;
+cursor:pointer;
 }
 
 .delete-btn{
-  background:#f44336;
-  color:white;
-  border:none;
-  padding:6px 10px;
-  border-radius:4px;
-  cursor:pointer;
+padding:6px 12px;
+background:#e74c3c;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+.edit-btn:hover{
+background:#2980b9;
+}
+
+.delete-btn:hover{
+background:#c0392b;
 }
