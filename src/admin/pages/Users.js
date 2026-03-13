@@ -1,105 +1,106 @@
 import React, { useState } from "react";
+import AdminSidebar from "../components/AdminSidebar";
+import AdminNavbar from "../components/AdminNavbar";
 import "../css/users.css";
 
-const Users = () => {
+function Users() {
 
-  const [search, setSearch] = useState("");
+const [search,setSearch] = useState("");
 
-  const usersData = [
-    {
-      id: 1,
-      name: "Meet Sanghani",
-      email: "meet@gmail.com",
-      phone: "9876543210",
-      role: "Customer",
-      status: "Active",
-    },
-    {
-      id: 2,
-      name: "Rahul Patel",
-      email: "rahul@gmail.com",
-      phone: "9876543211",
-      role: "Customer",
-      status: "Blocked",
-    },
-    {
-      id: 3,
-      name: "Priya Shah",
-      email: "priya@gmail.com",
-      phone: "9876543212",
-      role: "Customer",
-      status: "Active",
-    },
-  ];
+const users = [
+{
+id:1,
+name:"Rahul Sharma",
+email:"rahul@gmail.com",
+orders:5,
+status:"Active"
+},
+{
+id:2,
+name:"Priya Patel",
+email:"priya@gmail.com",
+orders:3,
+status:"Active"
+},
+{
+id:3,
+name:"Meet Sanghani",
+email:"meet@gmail.com",
+orders:7,
+status:"Blocked"
+}
+];
 
-  const filteredUsers = usersData.filter((user) =>
-    user.name.toLowerCase().includes(search.toLowerCase())
-  );
+const filteredUsers = users.filter(user =>
+user.name.toLowerCase().includes(search.toLowerCase())
+);
 
-  return (
-    <div className="users-container">
+return (
 
-      <h1 className="users-title">Users Management</h1>
+<div className="admin-container">
 
-      {/* Search Bar */}
-      <input
-        type="text"
-        placeholder="Search user..."
-        className="search-input"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+<AdminSidebar />
 
-      {/* Users Table */}
-      <table className="users-table">
+<div className="admin-main">
 
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
+<AdminNavbar />
 
-        <tbody>
-          {filteredUsers.map((user) => (
-            <tr key={user.id}>
+<div className="users-page">
 
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.phone}</td>
-              <td>{user.role}</td>
+<h2>Users Management</h2>
 
-              <td>
-                <span
-                  className={
-                    user.status === "Active"
-                      ? "status active"
-                      : "status blocked"
-                  }
-                >
-                  {user.status}
-                </span>
-              </td>
+<input
+className="user-search"
+type="text"
+placeholder="Search user..."
+value={search}
+onChange={(e)=>setSearch(e.target.value)}
+/>
 
-              <td>
-                <button className="btn edit">Edit</button>
-                <button className="btn delete">Delete</button>
-              </td>
+<div className="users-grid">
 
-            </tr>
-          ))}
-        </tbody>
+{filteredUsers.map(user => (
 
-      </table>
+<div className="user-card" key={user.id}>
 
-    </div>
-  );
-};
+<div className="avatar">
+{user.name.charAt(0)}
+</div>
+
+<h3>{user.name}</h3>
+
+<p>{user.email}</p>
+
+<p>Orders: {user.orders}</p>
+
+<span className={`user-status ${user.status}`}>
+{user.status}
+</span>
+
+<div className="user-actions">
+
+<button className="view-btn">View</button>
+
+<button className="block-btn">Block</button>
+
+<button className="delete-btn">Delete</button>
+
+</div>
+
+</div>
+
+))}
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+);
+
+}
 
 export default Users;

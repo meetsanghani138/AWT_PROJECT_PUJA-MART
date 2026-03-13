@@ -2,20 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/AdminSidebar.css";
 
-const AdminSidebar = () => {
+function AdminSidebar() {
   return (
     <div className="admin-sidebar">
 
-      <h2 className="sidebar-logo">🪔 PujaMart</h2>
+      <h2 className="sidebar-logo">PujaMart</h2>
 
       <ul className="sidebar-menu">
 
         <li>
-          <Link to="/admin/dashboard">🏠 Dashboard</Link>
+          <Link to="/admin/dashboard">📊 Dashboard</Link>
         </li>
 
         <li>
-          <Link to="/admin/products">🛍 Products</Link>
+          <Link to="/admin/products">📦 Products</Link>
         </li>
 
         <li>
@@ -23,29 +23,21 @@ const AdminSidebar = () => {
         </li>
 
         <li>
-          <Link to="/admin/orders">📦 Orders</Link>
+          <Link to="/admin/orders">🛒 Orders</Link>
         </li>
 
         <li>
-          <Link to="/admin/users">👥 Users</Link>
+          <Link to="/admin/users">👤 Users</Link>
         </li>
 
         <li>
-          <Link to="/admin/pandits">🧑‍🦱 Pandits</Link>
-        </li>
-
-        <li>
-          <Link to="/admin/offers">🎉 Festival Offers</Link>
-        </li>
-
-        <li>
-          <Link to="/admin/settings">⚙ Settings</Link>
+          <Link to="/admin/logout">🚪 Logout</Link>
         </li>
 
       </ul>
 
     </div>
   );
-};
+}
 
 export default AdminSidebar;

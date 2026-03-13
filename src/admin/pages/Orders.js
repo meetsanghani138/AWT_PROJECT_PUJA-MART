@@ -1,110 +1,104 @@
-import React from "react";
+import React, { useState } from "react";
+import AdminSidebar from "../components/AdminSidebar";
+import AdminNavbar from "../components/AdminNavbar";
 import "../css/order.css";
 
-const Order = () => {
+function Orders() {
 
-  const order = {
-    id: "PM1023",
-    date: "12 March 2026",
-    status: "Shipped",
-    payment: "UPI",
-    total: 1299,
-    address: {
-      name: "Meet Sanghani",
-      city: "Rajkot",
-      state: "Gujarat",
-      pincode: "360001",
-      phone: "9876543210"
-    },
-    items: [
-      {
-        id: 1,
-        name: "Brass Diya",
-        price: 299,
-        qty: 2,
-        image: "https://i.imgur.com/6n8QK4F.jpg"
-      },
-      {
-        id: 2,
-        name: "Puja Thali",
-        price: 499,
-        qty: 1,
-        image: "https://i.imgur.com/xXq9QKp.jpg"
-      }
-    ]
-  };
+const [search,setSearch] = useState("");
 
-  return (
-    <div className="order-page">
+const orders = [
+{
+id:1021,
+customer:"Rahul",
+product:"Brass Diya",
+price:120,
+status:"Processing"
+},
+{
+id:1022,
+customer:"Priya",
+product:"Puja Kit",
+price:450,
+status:"Shipped"
+},
+{
+id:1023,
+customer:"Meet",
+product:"Incense Sticks",
+price:80,
+status:"Delivered"
+}
+];
 
-      <h1 className="order-title">My Order</h1>
+const filteredOrders = orders.filter(order =>
+order.customer.toLowerCase().includes(search.toLowerCase()) ||
+order.id.toString().includes(search)
+);
 
-      {/* Order Summary */}
-      <div className="order-summary">
-        <p><strong>Order ID:</strong> {order.id}</p>
-        <p><strong>Date:</strong> {order.date}</p>
-        <p><strong>Payment:</strong> {order.payment}</p>
-        <p><strong>Status:</strong> {order.status}</p>
-        <p><strong>Total:</strong> ₹{order.total}</p>
-      </div>
+return (
 
-      {/* Order Items */}
-      <div className="order-items">
-        <h2>Products</h2>
+<div className="admin-container">
 
-        {order.items.map((item) => (
-          <div key={item.id} className="order-item">
+<AdminSidebar />
 
-            <img src={item.image} alt={item.name} />
+<div className="admin-main">
 
-            <div className="item-details">
-              <h3>{item.name}</h3>
-              <p>Price: ₹{item.price}</p>
-              <p>Quantity: {item.qty}</p>
-              <p>Total: ₹{item.price * item.qty}</p>
-            </div>
+<AdminNavbar />
 
-          </div>
-        ))}
-      </div>
+<div className="orders-page">
 
-      {/* Shipping Address */}
-      <div className="shipping">
-        <h2>Shipping Address</h2>
+<h2>Orders Dashboard</h2>
 
-        <p>{order.address.name}</p>
-        <p>{order.address.city}, {order.address.state}</p>
-        <p>Pin: {order.address.pincode}</p>
-        <p>Phone: {order.address.phone}</p>
-      </div>
+<input
+className="order-search"
+type="text"
+placeholder="Search Order..."
+value={search}
+onChange={(e)=>setSearch(e.target.value)}
+/>
 
-      {/* Order Tracking */}
-      <div className="order-tracking">
+<div className="orders-grid">
 
-        <h2>Order Tracking</h2>
+{filteredOrders.map(order => (
 
-        <div className="tracking-steps">
+<div className="order-card" key={order.id}>
 
-          <div className="step active">Order Placed</div>
-          <div className="step active">Processing</div>
-          <div className="step active">Shipped</div>
-          <div className="step">Out for Delivery</div>
-          <div className="step">Delivered</div>
+<h3>Order #{order.id}</h3>
 
-        </div>
+<p><b>Customer:</b> {order.customer}</p>
+<p><b>Product:</b> {order.product}</p>
+<p><b>Total:</b> ₹{order.price}</p>
 
-      </div>
+<span className={`status ${order.status}`}>
+{order.status}
+</span>
 
-      {/* Buttons */}
-      <div className="order-actions">
+<div className="timeline">
 
-        <button className="btn">Track Order</button>
-        <button className="btn">Download Invoice</button>
+<div className="step active">Ordered</div>
+<div className="step active">Packed</div>
+<div className={`step ${order.status === "Shipped" || order.status === "Delivered" ? "active":""}`}>Shipped</div>
+<div className={`step ${order.status === "Delivered" ? "active":""}`}>Delivered</div>
 
-      </div>
+</div>
 
-    </div>
-  );
-};
+<button className="view-btn">View Details</button>
 
-export default Order;
+</div>
+
+))}
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+);
+
+}
+
+export default Orders;

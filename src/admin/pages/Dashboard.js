@@ -1,94 +1,84 @@
 import React from "react";
-import AdminNavbar from "../components/AdminNavbar";
 import AdminSidebar from "../components/AdminSidebar";
-import StatsCard from "../components/StatsCard";
+import AdminNavbar from "../components/AdminNavbar";
 import "../css/Dashboard.css";
 
-const Dashboard = () => {
+function Dashboard() {
   return (
     <div className="admin-container">
 
       <AdminSidebar />
 
       <div className="admin-main">
-
         <AdminNavbar />
 
-        <div className="dashboard-content">
+        <h1>Admin Dashboard</h1>
 
-          <h1>Admin Dashboard</h1>
+        {/* Recent Orders */}
+        <div className="dashboard-section">
+          <h2>Recent Orders</h2>
 
-          <div className="stats-container">
+          <table className="dashboard-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Total</th>
+              </tr>
+            </thead>
 
-            <StatsCard
-              title="Total Products"
-              value="120"
-              icon="📦"
-            />
+            <tbody>
+              <tr>
+                <td>#101</td>
+                <td>Meet</td>
+                <td>Pending</td>
+                <td>₹450</td>
+              </tr>
 
-            <StatsCard
-              title="Orders"
-              value="350"
-              icon="🛒"
-            />
+              <tr>
+                <td>#102</td>
+                <td>Rahul</td>
+                <td>Shipped</td>
+                <td>₹650</td>
+              </tr>
 
-            <StatsCard
-              title="Users"
-              value="210"
-              icon="👥"
-            />
+              <tr>
+                <td>#103</td>
+                <td>Priya</td>
+                <td>Delivered</td>
+                <td>₹320</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-            <StatsCard
-              title="Revenue"
-              value="₹1,25,000"
-              icon="💰"
-            />
+        {/* Low Stock */}
+        <div className="dashboard-section">
+          <h2>Low Stock Products</h2>
 
-          </div>
+          <ul>
+            <li>Diyas – 5 left</li>
+            <li>Puja Kit – 2 left</li>
+            <li>Camphor – 3 left</li>
+          </ul>
+        </div>
 
-          <div className="recent-orders">
+        {/* New Users */}
+        <div className="dashboard-section">
+          <h2>New Users</h2>
 
-            <h2>Recent Orders</h2>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>Order ID</th>
-                  <th>Customer</th>
-                  <th>Product</th>
-                  <th>Amount</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>#101</td>
-                  <td>Rahul</td>
-                  <td>Puja Thali</td>
-                  <td>₹800</td>
-                  <td>Delivered</td>
-                </tr>
-
-                <tr>
-                  <td>#102</td>
-                  <td>Priya</td>
-                  <td>Ganesh Murti</td>
-                  <td>₹1500</td>
-                  <td>Pending</td>
-                </tr>
-
-              </tbody>
-            </table>
-
-          </div>
-
+          <ul>
+            <li>Meet Sanghani</li>
+            <li>Rahul Sharma</li>
+            <li>Priya Patel</li>
+          </ul>
         </div>
 
       </div>
 
     </div>
   );
-};
+}
 
 export default Dashboard;

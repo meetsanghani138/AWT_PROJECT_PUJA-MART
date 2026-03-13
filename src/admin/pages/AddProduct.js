@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import AdminNavbar from "../components/AdminNavbar";
 import AdminSidebar from "../components/AdminSidebar";
+import AdminNavbar from "../components/AdminNavbar";
 import "../css/AddProduct.css";
 
-const AddProduct = () => {
+function AddProduct() {
 
   const [product, setProduct] = useState({
     name: "",
     category: "",
     price: "",
     stock: "",
-    image: "",
     description: ""
   });
 
@@ -23,19 +22,8 @@ const AddProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log("Product Added:", product);
-
-    alert("Product Added Successfully 🪔");
-
-    setProduct({
-      name: "",
-      category: "",
-      price: "",
-      stock: "",
-      image: "",
-      description: ""
-    });
+    console.log(product);
+    alert("Product Added Successfully!");
   };
 
   return (
@@ -47,39 +35,34 @@ const AddProduct = () => {
 
         <AdminNavbar />
 
-        <div className="add-product-container">
+        <div className="add-product">
 
           <h2>Add New Product</h2>
 
-          <form onSubmit={handleSubmit} className="product-form">
+          <form onSubmit={handleSubmit}>
 
             <input
               type="text"
               name="name"
               placeholder="Product Name"
-              value={product.name}
               onChange={handleChange}
               required
             />
 
-            <select
-              name="category"
-              value={product.category}
-              onChange={handleChange}
-              required
-            >
+            <select name="category" onChange={handleChange} required>
+
               <option value="">Select Category</option>
-              <option value="Puja Items">Puja Items</option>
-              <option value="God Murti">God Murti</option>
-              <option value="Puja Thali">Puja Thali</option>
-              <option value="Rudraksha">Rudraksha</option>
+              <option value="diyas">Diyas</option>
+              <option value="incense">Incense</option>
+              <option value="puja-kit">Puja Kit</option>
+              <option value="idols">Idols</option>
+
             </select>
 
             <input
               type="number"
               name="price"
               placeholder="Price"
-              value={product.price}
               onChange={handleChange}
               required
             />
@@ -88,38 +71,27 @@ const AddProduct = () => {
               type="number"
               name="stock"
               placeholder="Stock Quantity"
-              value={product.stock}
               onChange={handleChange}
               required
             />
 
-            <input
-              type="text"
-              name="image"
-              placeholder="Image URL"
-              value={product.image}
-              onChange={handleChange}
-            />
+            <input type="file" />
 
             <textarea
               name="description"
               placeholder="Product Description"
-              value={product.description}
               onChange={handleChange}
-            />
+            ></textarea>
 
-            <button type="submit">
-              Add Product
-            </button>
+            <button type="submit">Add Product</button>
 
           </form>
 
         </div>
 
       </div>
-
     </div>
   );
-};
+}
 
 export default AddProduct;
