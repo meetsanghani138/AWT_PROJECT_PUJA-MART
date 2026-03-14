@@ -1,11 +1,13 @@
 .shop-container{
 padding:40px;
-background:#fafafa;
+background:#f6f6f6;
 }
 
 .shop-title{
 text-align:center;
+font-size:32px;
 margin-bottom:30px;
+color:#333;
 }
 
 .search-bar{
@@ -14,63 +16,102 @@ margin-bottom:40px;
 }
 
 .search-bar input{
-width:50%;
+width:350px;
 padding:10px;
-border-radius:5px;
+border-radius:8px;
 border:1px solid #ccc;
+font-size:16px;
 }
+
+/* Sections */
 
 .shop-section{
 margin-bottom:50px;
 }
 
-.card-grid{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
+.shop-section h2{
+margin-bottom:20px;
+color:#444;
 }
 
-.card{
+/* Grid */
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+/* Card */
+
+.shop-card{
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+text-align:center;
+font-weight:500;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+transition:0.3s;
 cursor:pointer;
 }
 
-.product-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
+.shop-card:hover{
+transform:translateY(-5px);
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
 }
 
-.product-card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-text-align:center;
+/* Kit card */
+
+.kit-card p{
+font-size:14px;
+margin:10px 0;
+color:#666;
 }
 
-.product-img{
-height:150px;
-background:#eee;
-margin-bottom:10px;
-}
-
-button{
-background:#ff6b00;
+.kit-card button{
+background:#ff6a33;
 color:white;
 border:none;
 padding:8px 15px;
-border-radius:5px;
+border-radius:6px;
 cursor:pointer;
 }
 
+/* Product grid */
+
+.products-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+}
+
+/* Combo */
+
+.combo-card p{
+color:#ff6a33;
+font-weight:bold;
+margin-top:5px;
+}
+
+/* Help section */
+
 .puja-help{
+background:#fff3e8;
+padding:40px;
+border-radius:12px;
 text-align:center;
-margin-top:50px;
-padding:30px;
-background:#fff3e0;
-border-radius:10px;
+}
+
+.puja-help h2{
+margin-bottom:20px;
+}
+
+.puja-help button{
+background:#ff6a33;
+color:white;
+border:none;
+padding:12px 25px;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
 }

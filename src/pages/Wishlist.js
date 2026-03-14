@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import "../css/Wishlist.css";
 import Navbar from "../components/Navbar";
 
+/* Import Images */
+
+import pujaThali from "../assets/images/PujaThali.jpg";
+import diya from "../assets/images/AartiDiya.jpg";
+import agarbatti from "../assets/images/Agarbatti.jpg";
+
 const Wishlist = () => {
 
   const [wishlist, setWishlist] = useState([
@@ -9,19 +15,19 @@ const Wishlist = () => {
       id: 1,
       name: "Puja Thali Set",
       price: "₹499",
-      image: "https://m.media-amazon.com/images/I/71vN9nK9v+L._AC_UF1000,1000_QL80_.jpg"
+      image: pujaThali
     },
     {
       id: 2,
       name: "Brass Diya",
       price: "₹199",
-      image: "https://m.media-amazon.com/images/I/71xjzJf7JDL._AC_UF1000,1000_QL80_.jpg"
+      image: diya
     },
     {
       id: 3,
-      name: "Incense Sticks",
+      name: "Agarbatti Pack",
       price: "₹99",
-      image: "https://m.media-amazon.com/images/I/81C3U2Pz0VL._AC_UF1000,1000_QL80_.jpg"
+      image: agarbatti
     }
   ]);
 
@@ -48,10 +54,14 @@ const Wishlist = () => {
                 <img src={item.image} alt={item.name} />
 
                 <h3>{item.name}</h3>
+
                 <p className="price">{item.price}</p>
 
                 <div className="wishlist-buttons">
-                  <button className="cart-btn">Add to Cart</button>
+
+                  <button className="cart-btn">
+                    Add to Cart
+                  </button>
 
                   <button
                     className="remove-btn"
@@ -59,6 +69,7 @@ const Wishlist = () => {
                   >
                     Remove
                   </button>
+
                 </div>
 
               </div>

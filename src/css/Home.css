@@ -135,6 +135,8 @@ nav a:hover {
 }
 
 /* ===== FEATURED SECTION ===== */
+/* ===== FEATURED SECTION ===== */
+
 .featured {
   padding: 6rem 6%;
   background-color: white;
@@ -149,7 +151,8 @@ nav a:hover {
   letter-spacing: -1px;
 }
 
-.row-five, .row-four {
+.row-five, 
+.row-four {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -167,21 +170,34 @@ nav a:hover {
 .circle {
   width: 110px;
   height: 110px;
-  background: linear-gradient(145deg, #f8f1e9, #ede3d9);
   border-radius: 50%;
+  overflow: hidden;
   margin: 0 auto 1rem;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.03);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+
+  background: linear-gradient(145deg, #f8f1e9, #ede3d9);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s cubic-bezier(0.175,0.885,0.32,1.275);
 }
 
+/* Image inside circle */
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Hover Effect */
 .circle-item:hover .circle {
   transform: translateY(-8px);
-  background: #e8d9cb;
-  box-shadow: 0 20px 30px rgba(178, 139, 94, 0.15);
+  box-shadow: 0 20px 30px rgba(178,139,94,0.2);
+}
+
+.circle-item:hover img {
+  transform: scale(1.1);
 }
 
 .circle-item p {
@@ -191,99 +207,102 @@ nav a:hover {
 }
 
 /* ===== FESTIVAL SPECIAL ===== */
-.festival {
-  padding: 6rem 6%;
-  background: linear-gradient(120deg, #fef9f2, #faf1e7);
+
+.festival{
+  padding:80px 6%;
+  background:#faf3ea;
 }
 
-.festival-title {
-  font-size: 2.8rem;
-  font-weight: 350;
-  text-align: center;
-  margin-bottom: 4rem;
+.festival-title{
+  font-size:38px;
+  text-align:center;
+  margin-bottom:50px;
+  font-weight:500;
+  color:#1e2a2f;
 }
 
-.festival-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  max-width: 1300px;
-  margin: 0 auto;
+.festival-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  max-width:1300px;
+  margin:auto;
 }
 
-.festival-card {
-  background: white;
-  padding: 2rem 1.5rem 2rem;
-  text-align: center;
-  border: 1px solid #f0e6dc;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
+/* Card */
+
+.festival-card{
+  background:#ffffff;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  transition:0.3s;
+  position:relative;
+  text-align:center;
+  padding-bottom:20px;
 }
 
-.festival-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: #b28b5e;
-  transform: scaleX(0);
-  transition: transform 0.3s;
+.festival-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
 }
 
-.festival-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 35px rgba(0,0,0,0.05);
+/* Offer Badge */
+
+.offer-badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:#ff3b3b;
+  color:white;
+  font-size:13px;
+  padding:5px 12px;
+  border-radius:20px;
+  font-weight:500;
 }
 
-.festival-card:hover::before {
-  transform: scaleX(1);
+/* Image */
+
+.festival-img{
+  width:100%;
+  height:180px;
+  overflow:hidden;
 }
 
-.offer-badge {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  background: #e8d9cb;
-  color: #1e2a2f;
-  padding: 0.3rem 1rem;
-  font-size: 0.8rem;
-  border-radius: 30px;
-  font-weight: 400;
+.festival-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 0.4s;
 }
 
-.festival-img {
-  width: 100px;
-  height: 100px;
-  background: #f4ece3;
-  border-radius: 50%;
-  margin: 1rem auto 1.5rem;
-  background-image: radial-gradient(circle at 30% 30%, #e8d9cb, #dacbbd);
+.festival-card:hover .festival-img img{
+  transform:scale(1.08);
 }
 
-.festival-card h3 {
-  font-size: 1.1rem;
-  font-weight: 450;
-  margin-bottom: 1.5rem;
-  color: #1e2a2f;
+/* Title */
+
+.festival-card h3{
+  font-size:18px;
+  margin:18px 10px;
+  color:#1e2a2f;
 }
 
-.festival-btn {
-  background: transparent;
-  border: 1px solid #1e2a2f;
-  padding: 0.7rem 2rem;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.3s;
-  color: #1e2a2f;
-  font-weight: 400;
+/* Button */
+
+.festival-btn{
+  padding:10px 22px;
+  border:1px solid #1e2a2f;
+  background:white;
+  cursor:pointer;
+  font-size:14px;
+  border-radius:6px;
+  transition:0.3s;
 }
 
-.festival-btn:hover {
-  background: #1e2a2f;
-  color: white;
+.festival-btn:hover{
+  background:#1e2a2f;
+  color:white;
 }
 
 /* ===== BESTSELLER SECTION ===== */
