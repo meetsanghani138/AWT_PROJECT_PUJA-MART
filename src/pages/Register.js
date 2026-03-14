@@ -1,91 +1,110 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/Register.css";
-import { Link } from "react-router-dom";
 
-const Register = () => {
+function Register() {
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    password: "",
+    confirmPassword: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!name || !email || !password || !confirmPassword) {
-      alert("Please fill all fields");
-      return;
-    }
-
-    if (password !== confirmPassword) {
+    if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match");
       return;
     }
 
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Password:", password);
+    localStorage.setItem("user", JSON.stringify(formData));
 
-    alert("Registration Successful!");
+    alert("Registration Successful");
+
+    navigate("/login");
   };
 
   return (
     <div className="register-container">
 
-      <div className="register-card">
+      <div className="register-box">
 
-        <h2 className="register-title">Create Account 🙏</h2>
-        <p className="register-subtitle">Join PujaMart Today</p>
+        <h2>Create Account</h2>
 
         <form onSubmit={handleSubmit}>
 
           <input
             type="text"
+            name="name"
             placeholder="Full Name"
-            className="register-input"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={handleChange}
+            required
           />
 
           <input
             type="email"
+            name="email"
             placeholder="Email Address"
-            className="register-input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleChange}
+            required
           />
 
           <input
+            type="text"
+            name="phone"
+            placeholder="Phone Number"
+            onChange={handleChange}
+            required
+          />
+
+          <textarea
+            name="address"
+            placeholder="Address"
+            onChange={handleChange}
+            required
+          ></textarea>
+
+          <input
             type="password"
+            name="password"
             placeholder="Password"
-            className="register-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handleChange}
+            required
           />
 
           <input
             type="password"
+            name="confirmPassword"
             placeholder="Confirm Password"
-            className="register-input"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            onChange={handleChange}
+            required
           />
 
-          <button type="submit" className="register-btn">
-            Register
-          </button>
+          <button type="submit">Register</button>
 
         </form>
 
-        <p className="login-text">
-          Already have an account?
-          <Link to="/login"> Login</Link>
+        <p>
+          Already have an account? <a href="/login">Login</a>
         </p>
 
       </div>
 
     </div>
   );
-};
+}
 
 export default Register;

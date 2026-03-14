@@ -3,7 +3,7 @@
 .pandit-hero{
 height:60vh;
 background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-url("https://images.unsplash.com/photo-1604608672516-7d3c9a0c7f1c");
+url("../assets/images/panditbanar.png");
 background-size:cover;
 background-position:center;
 display:flex;

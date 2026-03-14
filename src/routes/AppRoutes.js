@@ -13,7 +13,6 @@ import Dashboard from "../admin/pages/Dashboard";
 
 function AppRoutes() {
   return (
-    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
@@ -26,7 +25,7 @@ function AppRoutes() {
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />
       </Routes>
-    </BrowserRouter>
+
   );
 }
 

@@ -3,22 +3,58 @@ import Navbar from "../components/Navbar";
 import "../css/Home.css";
 import Footer from "../components/Footer";
 
+import AartiDiya from "../assets/images/AartiDiya.jpg";
+import Agarbatti from "../assets/images/Agarbatti.jpg";
+import DevotionalBooks from "../assets/images/DevotionalBooks.jpg";
+import Dresses from "../assets/images/Dresses.jpg";
+import GaneshIdol from "../assets/images/GaneshIdol.jpg";
+import JapMala from "../assets/images/JapMala.jpg";
+import PujaKits from "../assets/images/PujaKits.jpg";
+import PujaThali from "../assets/images/PujaThali.jpg";
+import Prashad from "../assets/images/prashad.jpg";
+
+import navratri from "../assets/images/navratri.jpg";
+import diwali from "../assets/images/diwali.jpg";
+import ganesh from "../assets/images/ganesh.jpg";
+import rakhi from "../assets/images/rakhi.jpg";
+import janmashtami from "../assets/images/janmashtami.jpg";
+import shivratri from "../assets/images/shivratri.jpg";
+import durga from "../assets/images/durga.jpg";
+
+import brassDiya from  "../assets/images/AartiDiya.jpg";
+import ganeshIdol from "../assets/images/GaneshIdol.jpg";
+import pujaThali from "../assets/images/PujaThali.jpg";
+import agarbattiPack from "../assets/images/Agarbatti.jpg";
+import rudrakshaMala from "../assets/images/rudraksha-mala.jpg";
+import camphorPack from "../assets/images/camphor-pack.jpg";
+
 function Home() {
 
 const firstRow = [
-"Ganesh Idol",
-"Puja Thali",
-"Agarbatti",
-"Aarti Diya",
-"Jap Mala"
+{ name: "Ganesh Idol", img: GaneshIdol },
+{ name: "Puja Thali", img: PujaThali },
+{ name: "Agarbatti", img: Agarbatti },
+{ name: "Aarti Diya", img: AartiDiya },
+{ name: "Jap Mala", img: JapMala }
 ];
 
 const secondRow = [
-"Puja Kits",
-"Dresses",
-"Devotional Books",
-"Prashad"
+{ name: "Puja Kits", img: PujaKits },
+{ name: "Dresses", img: Dresses },
+{ name: "Devotional Books", img: DevotionalBooks },
+{ name: "Prashad", img: Prashad }
 ];
+
+  const festivalItems = [
+    { title: "Navratri Special Kit", offer: "🔥 20% OFF", img: navratri },
+    { title: "Diwali Puja Combo", offer: "🔥 25% OFF", img: diwali },
+    { title: "Ganesh Chaturthi Items", offer: "🔥 15% OFF", img: ganesh },
+    { title: "Raksha Bandhan Puja Kit", offer: "🔥 10% OFF", img: rakhi },
+    { title: "Janmashtami Puja Set", offer: "🔥 18% OFF", img: janmashtami },
+    { title: "Maha Shivratri Kit", offer: "🔥 22% OFF", img: shivratri },
+    { title: "Durga Puja Essentials", offer: "🔥 20% OFF", img: durga },
+ 
+  ];
 
 return (
 <>
@@ -42,32 +78,35 @@ products all in one place.
 
 {/* Featured Puja Items */}
 
-<section className="featured">
+    <section className="featured">
 
-<h2 className="featured-title">Featured Puja Items</h2>
+      <h2 className="featured-title">Featured Puja Items</h2>
 
-{/* First Row */}
-<div className="row-five">
-{firstRow.map((item,index)=>(
-<div className="circle-item" key={index}>
-<div className="circle"></div>
-<p>{item}</p>
-</div>
-))}
-</div>
+      {/* First Row */}
+      <div className="row-five">
+        {firstRow.map((item, index) => (
+          <div className="circle-item" key={index}>
+            <div className="circle">
+              <img src={item.img} alt={item.name} />
+            </div>
+            <p>{item.name}</p>
+          </div>
+        ))}
+      </div>
 
-{/* Second Row */}
+      {/* Second Row */}
+      <div className="row-four">
+        {secondRow.map((item, index) => (
+          <div className="circle-item" key={index}>
+            <div className="circle">
+              <img src={item.img} alt={item.name} />
+            </div>
+            <p>{item.name}</p>
+          </div>
+        ))}
+      </div>
 
-<div className="row-four">
-{secondRow.map((item,index)=>(
-<div className="circle-item" key={index}>
-<div className="circle"></div>
-<p>{item}</p>
-</div>
-))}
-</div>
-
-</section>
+    </section>
 
 
 {/* Festival Special Section */}
@@ -79,28 +118,22 @@ products all in one place.
 
 <div className="festival-grid">
 
-{[
-{title:"Navratri Special Kit",offer:"🔥 20% OFF"},
-{title:"Diwali Puja Combo",offer:"🔥 25% OFF"},
-{title:"Ganesh Chaturthi Items",offer:"🔥 15% OFF"},
-{title:"Raksha Bandhan Puja Kit",offer:"🔥 10% OFF"},
-{title:"Janmashtami Puja Set",offer:"🔥 18% OFF"},
-{title:"Maha Shivratri Kit",offer:"🔥 22% OFF"},
-{title:"Durga Puja Essentials",offer:"🔥 20% OFF"},
-{title:"Karva Chauth Puja Thali",offer:"🔥 17% OFF"},
-{title:"Holi Festival Combo",offer:"🔥 12% OFF"},
-].map((item,index)=>(
+{festivalItems.map((item,index)=>(
+
 <div className="festival-card" key={index}>
 
 <span className="offer-badge">{item.offer}</span>
 
-<div className="festival-img"></div>
+<div className="festival-img">
+<img src={item.img} alt={item.title}/>
+</div>
 
 <h3>{item.title}</h3>
 
 <button className="festival-btn">Shop Now</button>
 
 </div>
+
 ))}
 
 </div>
@@ -116,17 +149,19 @@ products all in one place.
 <div className="bestseller-grid">
 
 {[
-{name:"Brass Diya",price:"₹199"},
-{name:"Ganesh Idol",price:"₹499"},
-{name:"Puja Thali",price:"₹349"},
-{name:"Agarbatti Pack",price:"₹99"},
-{name:"Rudraksha Mala",price:"₹259"},
-{name:"Camphor Pack",price:"₹79"}
+{ name:"Brass Diya", price:"₹199", img: brassDiya },
+{ name:"Ganesh Idol", price:"₹499", img: ganeshIdol },
+{ name:"Puja Thali", price:"₹349", img: pujaThali },
+{ name:"Agarbatti Pack", price:"₹99", img: agarbattiPack },
+{ name:"Rudraksha Mala", price:"₹259", img: rudrakshaMala },
+{ name:"Camphor Pack", price:"₹79", img: camphorPack }
 ].map((item,index)=>(
 
 <div className="product-card" key={index}>
 
-<div className="product-img"></div>
+<div className="product-img">
+   <img src={item.img} alt={item.name}/>
+</div>
 
 <div className="product-info">
 <h3>{item.name}</h3>
