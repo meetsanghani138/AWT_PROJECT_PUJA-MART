@@ -315,7 +315,7 @@ staying rooted in devotion and tradition.
 <div className="map-card">
 
 <iframe
-src="https://www.google.com/maps?q=Gandhidham,Gujarat&output=embed"
+src="https://www.google.com/maps?q=rajkot,Gujarat&output=embed"
 loading="lazy"
 title="map"
 ></iframe>
