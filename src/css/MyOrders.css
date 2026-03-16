@@ -1,0 +1,13 @@
+.orders-page{
+padding:40px;
+background:#f5f6fa;
+min-height:100vh;
+}
+
+.order-card{
+background:white;
+padding:20px;
+border-radius:8px;
+margin-bottom:15px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}

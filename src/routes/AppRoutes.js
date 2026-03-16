@@ -10,6 +10,9 @@ import Pandit from "../pages/Pandit";
 import Products from "../pages/Products";
 import Wishlist from "../pages/Wishlist";
 import Dashboard from "../admin/pages/Dashboard";
+import Checkout from "../pages/Checkout";
+import OrderSuccess from "../pages/OrderSuccess";
+import MyOrders from "../pages/MyOrders";
 
 function AppRoutes() {
   return (
@@ -24,6 +27,9 @@ function AppRoutes() {
         <Route path="/pandit" element={<Pandit />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/OrderSuccess" element={<OrderSuccess />} />
+        <Route path="/Myorders" element={<MyOrders />} />
       </Routes>
 
   );

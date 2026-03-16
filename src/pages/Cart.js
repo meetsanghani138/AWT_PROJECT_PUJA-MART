@@ -1,8 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/Cart.css";
 import Navbar from "../components/Navbar";
 
+import pujaThali from "../assets/images/PujaThali.jpg";
+import diya from "../assets/images/AartiDiya.jpg";
+import agarbatti from "../assets/images/Agarbatti.jpg";
+
 const Cart = () => {
+
+  const navigate = useNavigate();
 
   const [cartItems, setCartItems] = useState([
     {
@@ -10,24 +17,21 @@ const Cart = () => {
       name: "Puja Thali Set",
       price: 499,
       quantity: 1,
-      image:
-        "https://m.media-amazon.com/images/I/71vN9nK9v+L._AC_UF1000,1000_QL80_.jpg",
+      image: pujaThali,
     },
     {
       id: 2,
       name: "Brass Diya",
       price: 199,
       quantity: 2,
-      image:
-        "https://m.media-amazon.com/images/I/71xjzJf7JDL._AC_UF1000,1000_QL80_.jpg",
+      image: diya,
     },
     {
       id: 3,
       name: "Agarbatti Pack",
       price: 99,
       quantity: 1,
-      image:
-        "https://m.media-amazon.com/images/I/81C3U2Pz0VL._AC_UF1000,1000_QL80_.jpg",
+      image: agarbatti,
     },
   ]);
 
@@ -60,10 +64,10 @@ const Cart = () => {
     0
   );
 
-  const delivery = subtotal > 0 ? 50 : 0;
+  const shipping = subtotal > 0 ? 50 : 0;
   const discount = subtotal > 500 ? 100 : 0;
 
-  const total = subtotal + delivery - discount;
+  const total = subtotal + shipping - discount;
 
   return (
     <>
@@ -71,62 +75,93 @@ const Cart = () => {
 
       <div className="cart-page">
 
-        <h1 className="cart-title">🛒 My Cart</h1>
+        <h2>🛒 Shopping Cart</h2>
 
         {cartItems.length === 0 ? (
+
           <div className="empty-cart">
-            <h2>Your Cart is Empty</h2>
+
+            <div className="empty-icon">🛒</div>
+
+            <h2>Your cart is empty</h2>
+
             <p>Add some puja items to start shopping.</p>
+
+            <button
+              className="shop-btn"
+              onClick={() => navigate("/")}
+            >
+              Shop Now →
+            </button>
+
           </div>
+
         ) : (
 
-          <div className="cart-container">
+          <div className="cart-layout">
 
-            <div className="cart-items">
+            {/* LEFT SIDE TABLE */}
+            <div className="cart-table">
 
-              {cartItems.map((item) => (
-                <div key={item.id} className="cart-card">
+              <table>
 
-                  <img src={item.image} alt={item.name} />
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                  </tr>
+                </thead>
 
-                  <div className="cart-info">
+                <tbody>
 
-                    <h3>{item.name}</h3>
+                  {cartItems.map((item) => (
 
-                    <p className="price">₹{item.price}</p>
+                    <tr key={item.id}>
 
-                    <div className="qty-controls">
+                      <td className="product-info">
+                        <img src={item.image} alt={item.name} />
+                        {item.name}
+                      </td>
 
-                      <button onClick={() => decreaseQty(item.id)}>−</button>
+                      <td>₹{item.price}</td>
 
-                      <span>{item.quantity}</span>
+                      <td>
+                        <div className="qty-box">
+                          <button onClick={() => decreaseQty(item.id)}>−</button>
+                          <span>{item.quantity}</span>
+                          <button onClick={() => increaseQty(item.id)}>+</button>
+                        </div>
+                      </td>
 
-                      <button onClick={() => increaseQty(item.id)}>+</button>
+                      <td>₹{item.price * item.quantity}</td>
 
-                    </div>
+                      <td>
+                        <button
+                          className="remove-btn"
+                          onClick={() => removeItem(item.id)}
+                        >
+                         REMOVE
+                        </button>
+                      </td>
 
-                    <button
-                      className="remove-btn"
-                      onClick={() => removeItem(item.id)}
-                    >
-                      Remove
-                    </button>
+                    </tr>
 
-                  </div>
+                  ))}
 
-                </div>
-              ))}
+                </tbody>
+
+              </table>
 
             </div>
 
+
+            {/* RIGHT SIDE SUMMARY */}
             <div className="cart-summary">
 
-              <h2>Order Summary</h2>
-
-              <div className="summary-row">
-                <span>Items</span>
-                <span>{cartItems.length}</span>
-              </div>
+              <h3>Order Summary</h3>
 
               <div className="summary-row">
                 <span>Subtotal</span>
@@ -134,8 +169,8 @@ const Cart = () => {
               </div>
 
               <div className="summary-row">
-                <span>Delivery</span>
-                <span>₹{delivery}</span>
+                <span>Shipping</span>
+                <span>₹{shipping}</span>
               </div>
 
               <div className="summary-row">
@@ -150,15 +185,31 @@ const Cart = () => {
                 <span>₹{total}</span>
               </div>
 
-              <button className="checkout-btn">
-                Proceed to Checkout
+              <button
+                className="checkout-btn"
+                onClick={() => navigate("/checkout")}
+              >
+                Proceed to Checkout →
               </button>
+
+              <div className="promo-box">
+
+                <h4>Apply Promo Code</h4>
+
+                <input type="text" placeholder="Enter promo code" />
+
+                <button>Apply</button>
+
+              </div>
 
             </div>
 
           </div>
+
         )}
+
       </div>
+
     </>
   );
 };
