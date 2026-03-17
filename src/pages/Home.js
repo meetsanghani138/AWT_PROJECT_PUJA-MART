@@ -149,41 +149,33 @@ products all in one place.
 <div className="bestseller-grid">
 
 {[
-{ name:"Brass Diya", price:"₹199", img: brassDiya },
-{ name:"Ganesh Idol", price:"₹499", img: ganeshIdol },
-{ name:"Puja Thali", price:"₹349", img: pujaThali },
-{ name:"Agarbatti Pack", price:"₹99", img: agarbattiPack },
-{ name:"Rudraksha Mala", price:"₹259", img: rudrakshaMala },
-{ name:"Camphor Pack", price:"₹79", img: camphorPack }
-].map((item,index)=>(
+  { name:"Brass Diya", price:"₹199", img: brassDiya },
+  { name:"Ganesh Idol", price:"₹499", img: ganeshIdol },
+  { name:"Puja Thali", price:"₹349", img: pujaThali },
+  { name:"Agarbatti Pack", price:"₹99", img: agarbattiPack },
+  { name:"Rudraksha Mala", price:"₹259", img: rudrakshaMala },
+  { name:"Camphor Pack", price:"₹79", img: camphorPack }
+].map((item, index) => (
 
-<div className="product-card" key={index}>
+  <div className="product-card" key={index}>
+    
+    <div className="product-img">
+      <img src={item.img} alt={item.name} />
+    </div>
 
-<div className="product-img">
-   <img src={item.img} alt={item.name}/>
-</div>
+    <div className="product-info">
+      <h3>{item.name}</h3><br/>
+      <div className="rating">⭐⭐⭐⭐☆</div><br/>
+      <div className="price">{item.price}</div><br/>
+      <button className="cart-btn">Add to Cart</button>
+    </div>
 
-<div className="product-info">
-<h3>{item.name}</h3>
-
-<div className="rating">
-⭐⭐⭐⭐☆
-</div>
-
-<p className="price">{item.price}</p>
-
-<button className="cart-btn">Add to Cart</button>
-
-</div>
-
-</div>
+  </div>
 
 ))}
 
 </div>
-
 </section>
-
 
 {/* Why Choose Us */}
 
