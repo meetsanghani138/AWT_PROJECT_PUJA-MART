@@ -63,6 +63,9 @@ return (
 {/* Hero Section */}
 <section className="hero">
 <div className="hero-content">
+    {/* <div className="hero-particles">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div> */}
 <h1>Everything You Need for Daily Puja & Festivals</h1>
 <p>
 Discover authentic puja items, spiritual essentials, and festival

@@ -46,7 +46,14 @@ const Login = () => {
 
   return (
     <div className="login-container">
-
+          <div className="particles">
+            <div className="particle"></div>
+            <div className="particle"></div>
+            <div className="particle"></div>
+            <div className="particle"></div>
+            <div className="particle"></div>
+            <div className="particle"></div>
+          </div>
       <div className="login-card">
 
         <h2 className="login-title">🪔 PujaMart Login</h2>
