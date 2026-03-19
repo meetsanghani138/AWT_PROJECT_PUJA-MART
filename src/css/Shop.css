@@ -1,117 +1,383 @@
-.shop-container{
-padding:40px;
-background:#f6f6f6;
+/* Shop.css */
+
+/* Base Styles */
+.shop-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #fff8f0 0%, #fff 100%);
 }
 
-.shop-title{
-text-align:center;
-font-size:32px;
-margin-bottom:30px;
-color:#333;
+.shop-title {
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0 3rem;
+    background: linear-gradient(45deg, #b8860b, #8b4513, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: fadeInDown 0.8s ease;
 }
 
-.search-bar{
-text-align:center;
-margin-bottom:40px;
+/* Search Bar */
+.search-bar {
+    text-align: center;
+    margin: 2rem 0 4rem;
+    animation: fadeInUp 0.8s ease;
 }
 
-.search-bar input{
-width:350px;
-padding:10px;
-border-radius:8px;
-border:1px solid #ccc;
-font-size:16px;
+.search-bar input {
+    width: 60%;
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 50px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(184, 134, 11, 0.15);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
-/* Sections */
-
-.shop-section{
-margin-bottom:50px;
+.search-bar input:focus {
+    outline: none;
+    border-color: #b8860b;
+    box-shadow: 0 15px 40px rgba(184, 134, 11, 0.25);
+    transform: scale(1.02);
 }
 
-.shop-section h2{
-margin-bottom:20px;
-color:#444;
+.search-bar input::placeholder {
+    color: #b8860b;
+    opacity: 0.6;
 }
 
-/* Grid */
-
-.card-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+/* Section Styles */
+.shop-section {
+    margin: 4rem 0;
+    padding: 2rem;
+    background: rgba(255, 248, 240, 0.7);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
 }
 
-/* Card */
-
-.shop-card{
-background:white;
-padding:20px;
-border-radius:10px;
-text-align:center;
-font-weight:500;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-transition:0.3s;
-cursor:pointer;
+.shop-section:hover {
+    transform: translateY(-5px);
 }
 
-.shop-card:hover{
-transform:translateY(-5px);
-box-shadow:0 6px 18px rgba(0,0,0,0.15);
+.shop-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    color: #8b4513;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 5px solid #d4af37;
+    padding-left: 1.5rem;
+    background: linear-gradient(to right, #fdf5e6, transparent);
 }
 
-/* Kit card */
-
-.kit-card p{
-font-size:14px;
-margin:10px 0;
-color:#666;
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
 }
 
-.kit-card button{
-background:#ff6a33;
-color:white;
-border:none;
-padding:8px 15px;
-border-radius:6px;
-cursor:pointer;
+/* Shop Cards (Festivals, Gods, Combos) */
+.shop-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #8b4513;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(184, 134, 11, 0.1);
 }
 
-/* Product grid */
-
-.products-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
+.shop-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #b8860b, #d4af37, #8b4513);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
-/* Combo */
-
-.combo-card p{
-color:#ff6a33;
-font-weight:bold;
-margin-top:5px;
+.shop-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(184, 134, 11, 0.2);
+    border-color: #b8860b;
 }
 
-/* Help section */
-
-.puja-help{
-background:#fff3e8;
-padding:40px;
-border-radius:12px;
-text-align:center;
+.shop-card:hover::before {
+    transform: scaleX(1);
 }
 
-.puja-help h2{
-margin-bottom:20px;
+/* Puja Kit Cards */
+.kit-card {
+    background: linear-gradient(135deg, #fff9f0, #fff);
+    border: 2px solid #d4af37;
 }
 
-.puja-help button{
-background:#ff6a33;
-color:white;
-border:none;
-padding:12px 25px;
-font-size:16px;
-border-radius:8px;
-cursor:pointer;
+.kit-card h4 {
+    font-size: 1.3rem;
+    color: #8b4513;
+    margin-bottom: 1rem;
+}
+
+.kit-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.kit-card button {
+    background: linear-gradient(45deg, #b8860b, #d4af37);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+}
+
+.kit-card button:hover {
+    background: linear-gradient(45deg, #8b4513, #b8860b);
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
+}
+
+/* Products Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+/* Combo Cards */
+.combo-card {
+    background: linear-gradient(135deg, #fff, #fdf5e6);
+    border: 1px dashed #d4af37;
+    position: relative;
+}
+
+.combo-card h4 {
+    color: #8b4513;
+    font-size: 1.2rem;
+}
+
+.combo-card p {
+    color: #b8860b;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.combo-card::after {
+    content: '🔥';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.combo-card:hover::after {
+    opacity: 1;
+}
+
+/* Help Section */
+.puja-help {
+    background: linear-gradient(135deg, #8b4513, #b8860b);
+    padding: 3rem;
+    border-radius: 40px;
+    text-align: center;
+    margin: 4rem 0 2rem;
+    box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.puja-help h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.puja-help button {
+    background: white;
+    color: #8b4513;
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.puja-help button:hover {
+    background: #fdf5e6;
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .shop-container {
+        padding: 1.5rem;
+    }
+    
+    .shop-title {
+        font-size: 2.5rem;
+    }
+    
+    .shop-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-container {
+        padding: 1rem;
+    }
+    
+    .shop-title {
+        font-size: 2rem;
+        margin: 1rem 0 2rem;
+    }
+    
+    .search-bar input {
+        width: 90%;
+        padding: 1rem 1.5rem;
+    }
+    
+    .shop-section {
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .shop-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .puja-help {
+        padding: 2rem;
+    }
+    
+    .puja-help h2 {
+        font-size: 1.5rem;
+    }
+    
+    .puja-help button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .shop-title {
+        font-size: 1.5rem;
+    }
+    
+    .shop-section h2 {
+        font-size: 1.3rem;
+        padding-left: 1rem;
+    }
+    
+    .shop-card {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fdf5e6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #b8860b, #8b4513);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #8b4513, #b8860b);
 }
