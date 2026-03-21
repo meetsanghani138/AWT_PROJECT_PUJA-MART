@@ -1,65 +1,70 @@
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:8px 30px;
-background-color:#fff;
-border-bottom:1px solid #ddd;
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  font-family: Arial, sans-serif;
 }
 
-.logo img{
-height:55px;
-width:auto;
+/* LEFT - Logo */
+.nav-left .logo-img {
+  height: 50px;
+  width: auto;
 }
 
-.menu{
-display:flex;
-gap:25px;
+/* CENTER - Slogan */
+.nav-center h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  margin: 0;
 }
 
-.menu a{
-text-decoration:none;
-color:black;
-font-weight:500;
-font-size:15px;
+/* RIGHT - Menu */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
-
-
-/* Middle Menu */
-.menu{
-flex:2;
-display:flex;
-justify-content:center;
-gap:30px;
+/* Links */
+.nav-right a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
-.menu a{
-text-decoration:none;
-color:black;
-font-weight:500;
-font-size:16px;
+/* Hover Effect for regular links */
+.nav-right a:hover {
+  color: #ff5722;
 }
 
-.menu a:hover{
-color:#ff6b00;
+/* Icons */
+.icon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
-/* Right Menu */
-.rightMenu{
-flex:1;
-display:flex;
-justify-content:flex-end;
-gap:20px;
+/* Simple Login Button - No hover animation */
+.login-btn {
+  padding: 6px 14px;
+  border: 1px solid #ff5722;
+  border-radius: 5px;
+  color: #ff5722;
+  font-size: 14px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: none;
 }
 
-.rightMenu a{
-text-decoration:none;
-color:black;
-font-weight:500;
-font-size:16px;
-}
-
-.rightMenu a:hover{
-color:#ff6b00;
+/* No hover effect for login button */
+.login-btn:hover {
+  background-color: transparent;
+  color: #ff5722;
+  border: 1px solid #ff5722;
 }

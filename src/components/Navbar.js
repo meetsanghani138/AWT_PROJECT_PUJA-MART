@@ -3,30 +3,42 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo/logo1.png";
 import "../css/Navbar.css";
 
+// ICONS
+import { FaHeart, FaShoppingCart } from "react-icons/fa";
+
 function Navbar() {
   return (
     <nav className="navbar">
-      
-      {/* Logo */}
-      <div className="logo">
-        <img src={logo} alt="PujaMart Logo" />
+
+      {/* LEFT - LOGO */}
+      <div className="nav-left">
+        <img src={logo} alt="PujaMart Logo" className="logo-img" />
       </div>
 
-      {/* Middle Menu */}
-      <div className="menu">
+      {/* CENTER - SLOGAN */}
+      <div className="nav-center">
+        <h2>Pure Devotion, Delivered Home</h2>
+      </div>
+
+      {/* RIGHT - MENU + ICONS */}
+      <div className="nav-right">
+
         <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
         <Link to="/products">Products</Link>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <Link to="/pandit">Pandit Service</Link>
-      </div>
+        <Link to="/pandit">Pandit</Link>
 
-      {/* Right Menu */}
-      <div className="rightMenu">
-        <Link to="/login">Login</Link>
-        <Link to="/cart">Cart</Link>
-        <Link to="/wishlist">Wishlist</Link>
+        {/* ICONS */}
+        <Link to="/wishlist" className="icon">
+          <FaHeart />
+        </Link>
+
+        <Link to="/cart" className="icon">
+          <FaShoppingCart />
+        </Link>
+
+        <Link to="/login" className="login-btn">Login</Link>
+
       </div>
 
     </nav>
