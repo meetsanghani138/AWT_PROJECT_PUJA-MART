@@ -63,9 +63,7 @@ return (
 {/* Hero Section */}
 <section className="hero">
 <div className="hero-content">
-    {/* <div className="hero-particles">
-    <span></span><span></span><span></span><span></span><span></span>
-  </div> */}
+
 <h1>Everything You Need for Daily Puja & Festivals</h1>
 <p>
 Discover authentic puja items, spiritual essentials, and festival
@@ -73,8 +71,8 @@ products all in one place.
 </p>
 
 <div className="hero-buttons">
-<button className="shop-btn">Shop Now</button>
-<button className="explore-btn">Explore Products</button>
+  <button className="shop-btn">Shop Now</button>
+  <button className="explore-btn">Explore Products</button>
 </div>
 </div>
 </section>
@@ -278,45 +276,18 @@ staying rooted in devotion and tradition.
 </section>
 
 
-{/* Modern Contact Section */}
-<section id="contact" className="contact-modern">
+<section className="service-area">
 
-<h2 className="contact-title">📍 Contact Us</h2>
+<h2>📍 Pandit Service in Rajkot</h2>
 
-<div className="contact-wrapper">
-
-{/* Contact Form */}
-
-<div className="contact-card">
-
-<h3>Send us a Message</h3>
-
-<form>
-
-<input type="text" placeholder="Your Name" required />
-
-<input type="email" placeholder="Your Email" required />
-
-<textarea placeholder="Your Message" rows="5"></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
-
-</div>
-
-{/* Map */}
+<p>We provide home puja services only in Rajkot city.</p>
 
 <div className="map-card">
-
-<iframe
-src="https://www.google.com/maps?q=rajkot,Gujarat&output=embed"
-loading="lazy"
-title="map"
-></iframe>
-
-</div>
-
+  <iframe
+    src="https://www.google.com/maps?q=rajkot,Gujarat&output=embed"
+    loading="lazy"
+    title="map"
+  ></iframe>
 </div>
 
 </section>
