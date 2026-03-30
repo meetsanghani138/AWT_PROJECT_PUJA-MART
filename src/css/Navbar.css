@@ -1,65 +1,59 @@
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:8px 30px;
-background-color:#fff;
-border-bottom:1px solid #ddd;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background: white;
+  border-bottom: 1px solid #ddd;
 }
 
-.logo img{
-height:55px;
-width:auto;
+/* LEFT */
+.logo-img {
+  height: 50px;
 }
 
-.menu{
-display:flex;
-gap:25px;
+/* CENTER */
+.nav-center h2 {
+  font-size: 18px;
+  color: #b84a2c;
+  font-weight: 600;
 }
 
-.menu a{
-text-decoration:none;
-color:black;
-font-weight:500;
-font-size:15px;
+/* RIGHT */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
 
-
-
-/* Middle Menu */
-.menu{
-flex:2;
-display:flex;
-justify-content:center;
-gap:30px;
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 20px;
 }
 
-.menu a{
-text-decoration:none;
-color:black;
-font-weight:500;
-font-size:16px;
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
 }
 
-.menu a:hover{
-color:#ff6b00;
+.nav-links a:hover {
+  color: #b84a2c;
 }
 
-/* Right Menu */
-.rightMenu{
-flex:1;
-display:flex;
-justify-content:flex-end;
-gap:20px;
+/* ICONS */
+.nav-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
 }
 
-.rightMenu a{
-text-decoration:none;
-color:black;
-font-weight:500;
-font-size:16px;
+.nav-icons a {
+  color: #333;
 }
 
-.rightMenu a:hover{
-color:#ff6b00;
+.nav-icons a:hover {
+  color: #b84a2c;
+  transform: scale(1.2);
 }
