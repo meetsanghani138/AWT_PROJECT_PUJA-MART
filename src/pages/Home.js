@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import "../css/Home.css";
 import Footer from "../components/Footer";
 
+import panditbanner from "../assets/images/panditbanar.jpg";
 import AartiDiya from "../assets/images/AartiDiya.jpg";
 import Agarbatti from "../assets/images/Agarbatti.jpg";
 import DevotionalBooks from "../assets/images/DevotionalBooks.jpg";
@@ -62,19 +63,31 @@ return (
 
 {/* Hero Section */}
 <section className="hero">
-<div className="hero-content">
 
-<h1>Everything You Need for Daily Puja & Festivals</h1>
-<p>
-Discover authentic puja items, spiritual essentials, and festival
-products all in one place.
-</p>
+  <img 
+    src={panditbanner} 
+    alt="Pandit Banner" 
+    className="hero-img"
+  />
 
-<div className="hero-buttons">
-  <button className="shop-btn">Shop Now</button>
-  <button className="explore-btn">Explore Products</button>
-</div>
-</div>
+  {/* Overlay */}
+  <div className="hero-overlay"></div>
+
+  {/* Content */}
+  <div className="hero-content">
+    <h1>Everything You Need for Daily Puja & Festivals</h1>
+
+    <p>
+      Discover authentic puja items, spiritual essentials, and festival
+      products all in one place.
+    </p>
+
+    <div className="hero-buttons">
+      <button className="hero-btn primary">Shop Now</button>
+      <button className="hero-btn secondary">Explore Products</button>
+    </div>
+  </div>
+
 </section>
 
 {/* Featured Puja Items */}

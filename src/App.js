@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route  } from "react-router-dom";
 
 import AppRoutes from "./routes/AppRoutes";
 import AdminRoutes from "./admin/routes/AdminRoutes";
@@ -7,8 +7,13 @@ import AdminRoutes from "./admin/routes/AdminRoutes";
 function App() {
   return (
     <BrowserRouter>
-      <AppRoutes />
-      <AdminRoutes />
+<Routes>
+        {/* User Routes */}
+        <Route path="/*" element={<AppRoutes />} />
+
+        {/* Admin Routes */}
+        <Route path="/admin/*" element={<AdminRoutes />} />
+</Routes>
     </BrowserRouter>
   );
 }
