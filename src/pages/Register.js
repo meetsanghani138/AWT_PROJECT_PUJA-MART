@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Register.css";
-
+import axios from "axios";
 function Register() {
 
   const navigate = useNavigate();
@@ -22,20 +22,26 @@ function Register() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match");
-      return;
-    }
+  if (formData.password !== formData.confirmPassword) {
+    alert("Passwords do not match");
+    return;
+  }
 
-    localStorage.setItem("user", JSON.stringify(formData));
+  try {
+    const { confirmPassword, ...data } = formData;
 
-    alert("Registration Successful");
+    const res = await axios.post("/register", data);
 
-    navigate("/login");
-  };
+    alert(res.data.message);
+
+  } catch (error) {
+    console.log(error);
+    alert(error.response?.data?.message || "Error registering user");
+  }
+};
 
   return (
     <div className="register-container">
