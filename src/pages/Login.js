@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../css/Login.css";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
 
@@ -9,40 +10,32 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const adminEmail = "admin@gmail.com";
-    const adminPassword = "1234";
+  try {
+    const res = await axios.post("/login", {
+      email,
+      password
+    });
 
-    // get registered user
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    alert(res.data.message);
 
-    // ADMIN LOGIN
-    if (email === adminEmail && password === adminPassword) {
+    // ✅ store user in localStorage
+    localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      alert("Admin Login Successful 🙏");
+    // ✅ ADMIN CHECK (optional)
+    if (email === "admin@gmail.com" && password === "1234Admin") {
       navigate("/admin/dashboard");
-
-    }
-    // USER LOGIN
-    else if (
-      storedUser &&
-      email === storedUser.email &&
-      password === storedUser.password
-    ) {
-
-      alert("User Login Successful 🎉");
+    } else {
       navigate("/");
-
     }
-    // INVALID LOGIN
-    else {
 
-      alert("Invalid Email or Password");
-
-    }
-  };
+  } catch (error) {
+    console.log(error);
+    alert(error.response?.data?.message || "Login failed");
+  }
+};
 
   return (
     <div className="login-container">
