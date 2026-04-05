@@ -6,140 +6,122 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #fff;
+  font-family: 'Poppins', sans-serif;
+  background: #f9fafc;
   color: #333;
+  line-height: 1.6;
 }
 
-/* ================= HERO (CALL PANDIT) ================= */
-/* ================= HERO PREMIUM ================= */
-
+/* ================= HERO ================= */
 .hero {
   position: relative;
   width: 100%;
-  height:auto;
+  height: 90vh;
   overflow: hidden;
 }
 
-/* Banner Image */
 .hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* Dark overlay (important for text visibility) */
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
 }
 
-/* Center Content */
 .hero-content {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  left: 10%;
+  transform: translateY(-50%);
   color: white;
-  width: 90%;
-  max-width: 800px;
+  max-width: 600px;
 }
 
-/* Heading */
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  font-weight: bold;
+  font-size: 3.2rem;
+  margin-bottom: 10px;
 }
 
-/* Subtext */
 .hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
-/* Buttons container */
+/* Buttons */
 .hero-buttons {
   display: flex;
-  justify-content: center;
   gap: 15px;
 }
 
-/* Common button */
 .hero-btn {
-  padding: 12px 25px;
-  border-radius: 30px;
+  padding: 12px 22px;
+  border-radius: 50px;
   border: none;
-  font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
+  font-size: 15px;
+  transition: 0.3s ease;
 }
 
-/* Primary button */
 .hero-btn.primary {
   background: #ff7a00;
   color: white;
 }
 
-/* Secondary button */
+.hero-btn.primary:hover {
+  background: #e56700;
+  transform: scale(1.05);
+}
+
 .hero-btn.secondary {
   background: transparent;
   border: 1px solid white;
   color: white;
 }
 
-/* Hover effects */
-.hero-btn.primary:hover {
-  background: #e66a00;
-}
-
 .hero-btn.secondary:hover {
   background: white;
   color: black;
 }
+
 /* ================= FEATURED ================= */
 .featured {
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .featured-title {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 30px;
-  color: #b84a2c;
+  color: #ff7a00;
 }
 
-.featured-title::before,
-.featured-title::after,
-.circle-item p::after {
-  display: none;
-}
-
-.row-five,
-.row-four {
+.row-five, .row-four {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 .circle-item {
-  width: 150px;
   text-align: center;
+  transition: 0.3s;
+}
+
+.circle-item:hover {
+  transform: translateY(-5px);
 }
 
 .circle {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #ddd;
+  border: 3px solid #ff7a00;
 }
 
 .circle img {
@@ -150,36 +132,27 @@ body {
 
 /* ================= FESTIVAL ================= */
 .festival {
-  padding: 40px 20px;
-  background: #fff5eb;
+  padding: 60px 20px;
+  background: #fff4ec;
 }
 
 .festival-title {
   text-align: center;
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 30px;
-  color: #b84a2c;
-}
-
-.festival-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  color: #ff7a00;
 }
 
 .festival-card {
   background: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  text-align: center;
+  border-radius: 12px;
   overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.offer-badge {
-  background: #b84a2c;
-  color: white;
-  padding: 5px 10px;
-  font-size: 12px;
+.festival-card:hover {
+  transform: translateY(-6px);
 }
 
 .festival-img img {
@@ -188,58 +161,45 @@ body {
   object-fit: cover;
 }
 
-.festival-btn {
-  margin: 10px;
-  padding: 8px 15px;
-  border: none;
-  background: #b84a2c;
+.offer-badge {
+  position: absolute;
+  background: #ff7a00;
   color: white;
-  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
 }
 
-/* ================= BESTSELLER ================= */
-.bestseller {
-  padding: 40px 20px;
+.festival-btn {
+  margin: 12px;
+  padding: 10px;
+  background: #ff7a00;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
 }
 
-.bestseller-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 30px;
-  color: #b84a2c;
+.festival-btn:hover {
+  background: #e56700;
 }
 
-.bestseller-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
+/* ================= PRODUCTS ================= */
 .product-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  text-align: center;
+  background: white;
   transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-img {
-  overflow: hidden;
+  transform: translateY(-6px);
 }
 
 .product-img img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: 0.3s;
-}
-
-.product-card:hover .product-img img {
-  transform: scale(1.1);
 }
 
 .product-info {
@@ -248,41 +208,35 @@ body {
 
 .price {
   font-weight: bold;
+  color: #ff7a00;
   margin: 10px 0;
 }
 
 .cart-btn {
-  padding: 8px 15px;
-  border: none;
-  background: #b84a2c;
+  padding: 10px;
+  width: 100%;
+  background: #ff7a00;
   color: white;
-  border-radius: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-btn:hover {
+  background: #e56700;
 }
 
 /* ================= TRUST ================= */
 .trust {
-  padding: 40px 20px;
-  background: #fff5eb;
-}
-
-.trust-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  padding: 60px 20px;
+  background: #fff4ec;
 }
 
 .trust-card {
-  padding: 20px;
+  padding: 25px;
+  border-radius: 12px;
   background: white;
-  border: 1px solid #ddd;
   text-align: center;
-  border-radius: 10px;
   transition: 0.3s;
 }
 
@@ -292,102 +246,78 @@ body {
 
 /* ================= ABOUT ================= */
 .about {
-  padding: 40px 20px;
-}
-
-.about-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 30px;
+  padding: 60px 20px;
 }
 
 .about-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-}
-
-.about-container.reverse {
-  flex-direction: row-reverse;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 10px;
+  gap: 30px;
 }
 
 .about-text {
   flex: 1;
 }
 
-/* ================= SERVICE AREA ================= */
-.service-area {
-  padding: 40px;
-  text-align: center;
-}
-
-.map-card iframe {
+.about-image img {
   width: 100%;
-  height: 300px;
-  border-radius: 10px;
-  border: none;
+  border-radius: 12px;
 }
 
 /* ================= REVIEWS ================= */
-.reviews {
-  padding: 40px 20px;
-}
-
-.reviews-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
 .review-card {
-  border: 1px solid #ddd;
+  border-radius: 12px;
   padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+  background: white;
   transition: 0.3s;
+  text-align: center;
 }
 
 .review-card:hover {
-  border: 1px solid #b84a2c;
+  border: 1px solid #ff7a00;
 }
 
 .review-avatar {
   width: 60px;
   height: 60px;
-  background: #b84a2c;
+  background: #ff7a00;
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 10px;
+  margin: auto;
 }
 
 /* ================= FOOTER ================= */
 .footer {
-  background: #222;
+  background: #1a1a1a;
   color: white;
   text-align: center;
-  padding: 30px;
+  padding: 40px 20px;
 }
 
 .footer-links a {
-  color: #ccc;
+  color: #bbb;
   margin: 0 10px;
   text-decoration: none;
 }
 
 .footer-links a:hover {
-  color: white;
+  color: #ff7a00;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .hero-content {
+    left: 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
 }
