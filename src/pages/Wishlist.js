@@ -1,86 +1,69 @@
 import React, { useState } from "react";
 import "../css/Wishlist.css";
-import Navbar from "../components/Navbar";
 
-/* Import Images */
+function Wishlist({ products }) {
+  return (
+    <div className="wishlist-container">
+      <h2 className="wishlist-title">My Wishlist ❤️</h2>
 
-import pujaThali from "../assets/images/PujaThali.jpg";
-import diya from "../assets/images/AartiDiya.jpg";
-import agarbatti from "../assets/images/Agarbatti.jpg";
+      {products.length === 0 ? (
+        <p className="empty-msg">Your wishlist is empty</p>
+      ) : (
+        <div className="wishlist-grid">
+          {products.map((item) => (
+            <WishlistCard key={item.id} item={item} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
-const Wishlist = () => {
+function WishlistCard({ item }) {
+  const [liked, setLiked] = useState(true);
+  const [added, setAdded] = useState(false);
 
-  const [wishlist, setWishlist] = useState([
-    {
-      id: 1,
-      name: "Puja Thali Set",
-      price: "₹499",
-      image: pujaThali
-    },
-    {
-      id: 2,
-      name: "Brass Diya",
-      price: "₹199",
-      image: diya
-    },
-    {
-      id: 3,
-      name: "Agarbatti Pack",
-      price: "₹99",
-      image: agarbatti
-    }
-  ]);
-
-  const removeItem = (id) => {
-    setWishlist(wishlist.filter((item) => item.id !== id));
+  const handleAdd = () => {
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
   };
 
   return (
-    <>
-      <Navbar />
+    <div className="wishlist-card">
 
-      <div className="wishlist-container">
+      {/* ❤️ Heart Toggle */}
+      <span className="heart" onClick={() => setLiked(!liked)}>
+        {liked ? "❤️" : "🤍"}
+      </span>
 
-        <h1 className="wishlist-title">💖 My Wishlist</h1>
+      {/* 🔥 Discount Badge */}
+      <span className="badge">20% OFF</span>
 
-        {wishlist.length === 0 ? (
-          <p className="empty-msg">Your wishlist is empty</p>
-        ) : (
-          <div className="wishlist-grid">
+      {/* Product Image */}
+      <img src={item.image} alt={item.name} />
 
-            {wishlist.map((item) => (
-              <div key={item.id} className="wishlist-card">
+      {/* Product Name */}
+      <h3>{item.name}</h3>
 
-                <img src={item.image} alt={item.name} />
+      {/* ⭐ Rating */}
+      <p className="rating">⭐⭐⭐⭐☆ (4.2)</p>
 
-                <h3>{item.name}</h3>
+      {/* Price */}
+      <p className="price">₹{item.price}</p>
 
-                <p className="price">{item.price}</p>
+      {/* 👇 Hover Buttons */}
+      <div className="quick-actions">
+        <button
+          className={`cart-btn ${added ? "added" : ""}`}
+          onClick={handleAdd}
+        >
+          {added ? "Added ✅" : "Add to Cart"}
+        </button>
 
-                <div className="wishlist-buttons">
-
-                  <button className="cart-btn">
-                    Add to Cart
-                  </button>
-
-                  <button
-                    className="remove-btn"
-                    onClick={() => removeItem(item.id)}
-                  >
-                    Remove
-                  </button>
-
-                </div>
-
-              </div>
-            ))}
-
-          </div>
-        )}
-
+        <button className="buy-btn">Buy Now ⚡</button>
       </div>
-    </>
+    </div>
   );
-};
+}
 
 export default Wishlist;
