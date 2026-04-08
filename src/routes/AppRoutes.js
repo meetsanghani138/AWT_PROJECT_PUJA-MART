@@ -13,15 +13,17 @@ import Dashboard from "../admin/pages/Dashboard";
 import Checkout from "../pages/Checkout";
 import OrderSuccess from "../pages/OrderSuccess";
 import MyOrders from "../pages/MyOrders";
+import About from "../pages/About";
 
 function AppRoutes() {
   return (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/product" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/pandit" element={<Pandit />} />

@@ -28,7 +28,7 @@ function Navbar() {
           <Link to="/">Home</Link>
            <Link to="/Product">Products</Link>
           <Link to="/pandit">Pandit</Link>
-          <a href="#about">About</a>
+          <Link to="/about">About</Link>
         </div>
 
         {/* ICONS */}
