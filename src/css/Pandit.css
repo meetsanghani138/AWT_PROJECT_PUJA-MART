@@ -1,4 +1,4 @@
-/* Pandit.css - Premium & Interactive Design */
+/* Pandit.css - Dark Neon Theme */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
@@ -11,21 +11,26 @@
 body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  background-color: #121212;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Dark Theme */
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f9e2d2;
+  background: #2C2C2C;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #b84a2c, #d97c4a);
+  background: linear-gradient(45deg, #FF3D00, #cc3100);
   border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #cc3100, #FF3D00);
 }
 
 /* Animations */
@@ -60,9 +65,9 @@ body {
 }
 
 @keyframes pulseGlow {
-  0% { box-shadow: 0 0 0 0 rgba(184, 74, 44, 0.4); }
-  70% { box-shadow: 0 0 0 15px rgba(184, 74, 44, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(184, 74, 44, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(255, 61, 0, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 61, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 61, 0, 0); }
 }
 
 @keyframes rotateIn {
@@ -73,7 +78,7 @@ body {
 /* Hero Section */
 .pandit-hero {
   min-height: 90vh;
-  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+  background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.9)), 
               url("../assets/images/panditbanar.jpg");
   background-size: cover;
   background-position: center;
@@ -84,133 +89,22 @@ body {
   position: relative;
   overflow: hidden;
 }
-/* Hero Section */
 
-.pandit-hero{
-height:60vh;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-url("../assets/images/panditbanar.png");
-background-size:cover;
-background-position:center;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-color:white;
-text-align:center;
+/* Alternative Hero Section (if using the second one) */
+.pandit-hero-alt {
+  height: 60vh;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+  url("../assets/images/panditbanar.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
 }
 
-.book-btn{
-margin-top:15px;
-padding:12px 25px;
-background:#ff7b00;
-border:none;
-color:white;
-font-size:16px;
-cursor:pointer;
-border-radius:5px;
-}
-
-/* Pandit Cards */
-
-.pandit-section{
-padding:60px 10%;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:40px;
-font-size:28px;
-}
-
-.pandit-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.pandit-card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-text-align:center;
-transition:0.3s;
-}
-
-.pandit-card:hover{
-transform:translateY(-5px);
-}
-
-.pandit-img{
-height:150px;
-background:#eee;
-border-radius:8px;
-margin-bottom:15px;
-}
-
-.pandit-card button{
-margin-top:10px;
-padding:8px 20px;
-background:#ff7b00;
-border:none;
-color:white;
-cursor:pointer;
-border-radius:5px;
-}
-
-/* Puja Services */
-
-.puja-services{
-padding:60px 10%;
-background:#f9f9f9;
-}
-
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.service-card{
-background:white;
-padding:20px;
-text-align:center;
-border-radius:8px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-}
-
-/* Booking Form */
-
-.booking-section{
-padding:60px 10%;
-text-align:center;
-}
-
-.booking-form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.booking-form input,
-.booking-form select,
-.booking-form textarea{
-padding:10px;
-border:1px solid #ccc;
-border-radius:5px;
-}
-
-.booking-form button{
-padding:12px;
-background:#ff7b00;
-color:white;
-border:none;
-cursor:pointer;
-border-radius:5px;
-}
 /* Floating Elements */
 .hero-floating-elements {
   position: absolute;
@@ -222,7 +116,7 @@ border-radius:5px;
 .floating-element {
   position: absolute;
   font-size: 3rem;
-  opacity: 0.2;
+  opacity: 0.1;
   animation: float 8s ease-in-out infinite;
 }
 
@@ -245,7 +139,7 @@ border-radius:5px;
   font-size: 4rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #fff, #ffd89b);
+  background: linear-gradient(135deg, #fff, #FF3D00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 3s linear infinite;
@@ -255,6 +149,7 @@ border-radius:5px;
   font-size: 1.2rem;
   margin-bottom: 2rem;
   opacity: 0.95;
+  color: #e0e0e0;
 }
 
 .hero-stats {
@@ -277,17 +172,18 @@ border-radius:5px;
   display: block;
   font-size: 2rem;
   font-weight: 800;
-  color: #ff7b00;
+  color: #FF3D00;
 }
 
 .stat-label {
   font-size: 0.9rem;
   opacity: 0.9;
+  color: #b0b0b0;
 }
 
 .book-btn {
   padding: 14px 35px;
-  background: linear-gradient(135deg, #ff7b00, #ff9e44);
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
   border: none;
   color: white;
   font-size: 1.1rem;
@@ -312,7 +208,7 @@ border-radius:5px;
 
 .book-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(255, 123, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(255, 61, 0, 0.4);
   padding: 14px 40px;
 }
 
@@ -329,8 +225,8 @@ border-radius:5px;
 
 .tab-btn {
   padding: 12px 35px;
-  background: white;
-  border: 2px solid #ffe4d5;
+  background: #2C2C2C;
+  border: 2px solid #3a3a3a;
   border-radius: 50px;
   font-size: 1rem;
   font-weight: 600;
@@ -339,7 +235,7 @@ border-radius:5px;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #5a3e2b;
+  color: #e0e0e0;
 }
 
 .tab-btn .tab-icon {
@@ -347,16 +243,17 @@ border-radius:5px;
 }
 
 .tab-btn.active {
-  background: linear-gradient(135deg, #ff7b00, #ff9e44);
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
   color: white;
   border-color: transparent;
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(255, 123, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(255, 61, 0, 0.3);
 }
 
 .tab-btn:hover:not(.active) {
   transform: translateY(-3px);
-  border-color: #ff7b00;
+  border-color: #FF3D00;
+  background: #1a1a1a;
 }
 
 /* Section Header */
@@ -368,21 +265,21 @@ border-radius:5px;
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #b84a2c, #d97c4a);
+  background: linear-gradient(135deg, #FF3D00, #ff6a33);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
-  color: #666;
+  color: #a0a0a0;
   font-size: 1rem;
 }
 
 /* Pandit Section */
 .pandit-section {
   padding: 80px 10%;
-  background: linear-gradient(135deg, #fff8f0 0%, #fff 100%);
+  background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
 }
 
 .pandit-grid {
@@ -393,18 +290,20 @@ border-radius:5px;
 
 /* Pandit Card */
 .pandit-card {
-  background: white;
+  background: #2C2C2C;
   border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   animation: fadeInUp 0.6s ease backwards;
+  border: 1px solid #3a3a3a;
 }
 
 .pandit-card:hover {
   transform: translateY(-15px);
-  box-shadow: 0 30px 50px rgba(184, 74, 44, 0.2);
+  box-shadow: 0 30px 50px rgba(255, 61, 0, 0.2);
+  border-color: #FF3D00;
 }
 
 .card-badge {
@@ -428,7 +327,7 @@ border-radius:5px;
 }
 
 .tomorrow-badge {
-  background: linear-gradient(135deg, #ff9800, #fb8c00);
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
   color: white;
 }
 
@@ -455,14 +354,14 @@ border-radius:5px;
   left: 0;
   right: 0;
   padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
 }
 
 .rating-badge {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   backdrop-filter: blur(5px);
   padding: 5px 12px;
   border-radius: 20px;
@@ -470,7 +369,7 @@ border-radius:5px;
 }
 
 .stars {
-  color: #ffc107;
+  color: #FF3D00;
 }
 
 .pandit-info {
@@ -481,7 +380,7 @@ border-radius:5px;
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #2d2d2d;
+  color: #e0e0e0;
 }
 
 .experience-badge, .specialty {
@@ -490,10 +389,10 @@ border-radius:5px;
   gap: 5px;
   margin: 8px 8px 8px 0;
   padding: 5px 12px;
-  background: #fef2e7;
+  background: #1a1a1a;
   border-radius: 20px;
   font-size: 0.85rem;
-  color: #b84a2c;
+  color: #FF3D00;
 }
 
 .languages {
@@ -505,10 +404,10 @@ border-radius:5px;
 
 .language-tag {
   padding: 4px 12px;
-  background: #f0f0f0;
+  background: #1a1a1a;
   border-radius: 15px;
   font-size: 0.8rem;
-  color: #666;
+  color: #b0b0b0;
 }
 
 .price-info {
@@ -520,19 +419,19 @@ border-radius:5px;
 
 .price-label {
   font-size: 0.85rem;
-  color: #666;
+  color: #a0a0a0;
 }
 
 .price-value {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #ff7b00;
+  color: #FF3D00;
 }
 
 .book-pandit-btn {
   width: 100%;
   padding: 12px;
-  background: linear-gradient(135deg, #ff7b00, #ff9e44);
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
   border: none;
   color: white;
   border-radius: 50px;
@@ -555,13 +454,13 @@ border-radius:5px;
 
 .book-pandit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 123, 0, 0.4);
+  box-shadow: 0 10px 25px rgba(255, 61, 0, 0.4);
 }
 
 /* Puja Services Section */
 .puja-services {
   padding: 80px 10%;
-  background: linear-gradient(135deg, #fef2e7 0%, #fff 100%);
+  background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
 }
 
 .services-grid {
@@ -571,22 +470,23 @@ border-radius:5px;
 }
 
 .service-card {
-  background: white;
+  background: #2C2C2C;
   padding: 30px 20px;
   text-align: center;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   transition: all 0.4s;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   animation: fadeInUp 0.6s ease backwards;
+  border: 1px solid #3a3a3a;
 }
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 35px rgba(184, 74, 44, 0.15);
-  border: 1px solid rgba(184, 74, 44, 0.3);
+  box-shadow: 0 20px 35px rgba(255, 61, 0, 0.15);
+  border-color: #FF3D00;
 }
 
 .service-icon {
@@ -600,7 +500,7 @@ border-radius:5px;
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #2d2d2d;
+  color: #e0e0e0;
 }
 
 .service-details {
@@ -611,21 +511,21 @@ border-radius:5px;
 }
 
 .service-price {
-  color: #ff7b00;
+  color: #FF3D00;
   font-weight: 700;
   font-size: 1.2rem;
 }
 
 .service-duration {
-  color: #666;
+  color: #a0a0a0;
   font-size: 0.85rem;
 }
 
 .service-btn {
   padding: 8px 25px;
   background: transparent;
-  border: 2px solid #ff7b00;
-  color: #ff7b00;
+  border: 2px solid #FF3D00;
+  color: #FF3D00;
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s;
@@ -633,7 +533,7 @@ border-radius:5px;
 }
 
 .service-btn:hover {
-  background: linear-gradient(135deg, #ff7b00, #ff9e44);
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
   color: white;
   transform: translateY(-2px);
 }
@@ -641,26 +541,29 @@ border-radius:5px;
 /* Booking Section */
 .booking-section {
   padding: 80px 10%;
-  background: linear-gradient(135deg, #fff8f0 0%, #fff 100%);
+  background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
 }
 
 .selected-pandit-card {
   max-width: 600px;
   margin: 0 auto 20px;
   padding: 15px 20px;
-  background: linear-gradient(135deg, #fef2e7, #fff);
+  background: #2C2C2C;
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-left: 4px solid #ff7b00;
+  border-left: 4px solid #FF3D00;
   animation: slideInLeft 0.5s ease;
+  border: 1px solid #3a3a3a;
+  border-left: 4px solid #FF3D00;
 }
 
 .selected-pandit-info {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #e0e0e0;
 }
 
 .selected-icon {
@@ -669,22 +572,22 @@ border-radius:5px;
 
 .selected-specialty {
   font-size: 0.85rem;
-  color: #ff7b00;
+  color: #FF3D00;
   margin-left: 5px;
 }
 
 .change-pandit-btn {
   padding: 5px 15px;
   background: transparent;
-  border: 1px solid #ff7b00;
-  color: #ff7b00;
+  border: 1px solid #FF3D00;
+  color: #FF3D00;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .change-pandit-btn:hover {
-  background: #ff7b00;
+  background: #FF3D00;
   color: white;
 }
 
@@ -692,10 +595,11 @@ border-radius:5px;
 .booking-form {
   max-width: 700px;
   margin: 0 auto;
-  background: white;
+  background: #2C2C2C;
   padding: 40px;
   border-radius: 30px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border: 1px solid #3a3a3a;
 }
 
 .form-row {
@@ -714,7 +618,7 @@ border-radius:5px;
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
-  color: #333;
+  color: #e0e0e0;
   font-size: 0.9rem;
 }
 
@@ -723,19 +627,21 @@ border-radius:5px;
 .form-group textarea {
   width: 100%;
   padding: 12px 15px 12px 45px;
-  border: 2px solid #ffe4d5;
+  border: 2px solid #3a3a3a;
   border-radius: 15px;
   font-size: 0.95rem;
   transition: all 0.3s;
   font-family: 'Poppins', sans-serif;
+  background: #121212;
+  color: #e0e0e0;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #ff7b00;
-  box-shadow: 0 0 0 4px rgba(255, 123, 0, 0.1);
+  border-color: #FF3D00;
+  box-shadow: 0 0 0 4px rgba(255, 61, 0, 0.15);
   transform: translateY(-2px);
 }
 
@@ -744,13 +650,14 @@ border-radius:5px;
   left: 15px;
   top: 42px;
   font-size: 1.2rem;
-  opacity: 0.6;
+  opacity: 0.7;
+  color: #FF3D00;
 }
 
 .submit-btn {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #ff7b00, #ff9e44);
+  background: linear-gradient(135deg, #FF3D00, #cc3100);
   border: none;
   color: white;
   border-radius: 50px;
@@ -767,7 +674,7 @@ border-radius:5px;
 
 .submit-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255, 123, 0, 0.4);
+  box-shadow: 0 10px 25px rgba(255, 61, 0, 0.4);
   gap: 15px;
 }
 
@@ -785,7 +692,7 @@ border-radius:5px;
   gap: 15px;
   z-index: 1000;
   animation: slideInRight 0.5s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .toast-icon {
